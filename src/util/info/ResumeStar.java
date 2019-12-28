@@ -15,6 +15,7 @@ public class ResumeStar {
     private List<WorkExperiences> workExperiences;
     private List<Award> awards;
     private List<Certificate> certificates;
+    private List<Project> projects;
 
     private SkillStack skillStack;
 
@@ -26,9 +27,12 @@ public class ResumeStar {
         workExperiences = new ArrayList<>();
         awards = new ArrayList<>();
         certificates = new ArrayList<>();
-
+        projects = new ArrayList<>();
     }
 
+    public void addProject(Project project) {
+        projects.add(project);
+    }
     public void addEducation (EducationExperience educationExperience) {
         educationExperiences.add(educationExperience);
     }
@@ -114,5 +118,19 @@ public class ResumeStar {
         this.skillStack = skillStack;
     }
 
+    public List<Certificate> getCertificates() {
+        return certificates;
+    }
 
+    public void setCertificates(List<Certificate> certificates) {
+        this.certificates = certificates;
+    }
+
+    public List<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
+    }
 }

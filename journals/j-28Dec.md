@@ -1,10 +1,12 @@
-TO DO
+DONE
 <ul>
-<li> Info java classes </li>
+<li>Servlet skeleton</li>
+<li> Info java classes </li></ul>
+TODO
+<ul>
 <li> 
 dispatch resume star info onto the responsive page. 
 </li>
-
 </ul>
 
 PROBLEMS
