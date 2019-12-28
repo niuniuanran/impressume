@@ -6,7 +6,10 @@ import java.util.List;
 public class ResumeStar {
     private int id;
     private String name;
+    private String firstName;
+    private String lastName;
     private String briefIntro;
+    private String imagePath;
 
     private ContactDetail contactDetail;
     private PersonalLinks personalLinks;
@@ -20,14 +23,25 @@ public class ResumeStar {
     private SkillStack skillStack;
 
     public ResumeStar() { }
-    public ResumeStar(int id, String name) {
+    public ResumeStar(int id, String firstName, String lastName) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.name = this.firstName + " " + this.lastName;
+        this.name = firstName + " " + lastName;
         educationExperiences = new ArrayList<>();
         workExperiences = new ArrayList<>();
         awards = new ArrayList<>();
         certificates = new ArrayList<>();
         projects = new ArrayList<>();
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     public void addProject(Project project) {
@@ -52,6 +66,22 @@ public class ResumeStar {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getName() {

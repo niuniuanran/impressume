@@ -8,7 +8,9 @@
     <title> Impressume: Resume to Impress </title>
   </head>
   <body>
+  <div id="tests">
   <a href='<c:url value="/test-to-json"/>' >Test to json</a>
+  </div>
 
   </body>
 </html>

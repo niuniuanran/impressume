@@ -2,8 +2,8 @@ package util.info;
 
 public class PersonalLinks {
     private String linkedInURL;
-    private String gitHutURL;
-    private String tweeterURL;
+    private String gitHubURL;
+    private String twitterURL;
     private String facebookURL;
 
     public PersonalLinks() {
@@ -17,20 +17,20 @@ public class PersonalLinks {
         this.linkedInURL = linkedInURL;
     }
 
-    public String getGitHutURL() {
-        return gitHutURL;
+    public String getGitHubURL() {
+        return gitHubURL;
     }
 
-    public void setGitHutURL(String gitHutURL) {
-        this.gitHutURL = gitHutURL;
+    public void setGitHubURL(String gitHutURL) {
+        this.gitHubURL = gitHutURL;
     }
 
-    public String getTweeterURL() {
-        return tweeterURL;
+    public String getTwitterURL() {
+        return twitterURL;
     }
 
-    public void setTweeterURL(String tweeterURL) {
-        this.tweeterURL = tweeterURL;
+    public void setTwitterURL(String twitterURL) {
+        this.twitterURL = twitterURL;
     }
 
     public String getFacebookURL() {
