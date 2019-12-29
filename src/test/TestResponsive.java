@@ -57,9 +57,7 @@ public class TestResponsive extends HttpServlet {
         skillStack.setSuse(true);
         skillStack.setSass(true);
         skillStack.setReact(true);
-        skillStack.addSkillGroup(new SkillGroup("Work Flow", new String[]{"Mobile-First, Responsive Design", "Agile Development & Scrum"}));
         skillStack.addSkillGroup(new SkillGroup("Cloud Platform Skills", new String[]{"Amazon Web Service", "Google Cloudplatform"}));
-
 
         testStar.setSkillStack(skillStack);
 
@@ -67,14 +65,10 @@ public class TestResponsive extends HttpServlet {
         testStar.setImagePath("./images/anran-profile.png");
 
         testStar.addWork(new WorkExperience("Junior Web Developer", "Air NZ", "Developed something",new TimeInMonth(11, 2020), new TimeInMonth(true), "www.airnewzealand.co.nz"));
-
         req.setAttribute("star", testStar);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/responsive/responsive_resume.jsp");
         dispatcher.forward(req, resp);
-
-
-
 
 
 

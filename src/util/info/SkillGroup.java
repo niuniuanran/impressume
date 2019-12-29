@@ -41,5 +41,8 @@ public class SkillGroup {
         this.skills = skills;
     }
 
-
+    @Override
+    public String toString() {
+        return name + ": " +skills.toString();
+    }
 }

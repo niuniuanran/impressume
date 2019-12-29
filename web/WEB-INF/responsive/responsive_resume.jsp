@@ -159,7 +159,7 @@
     </section>
     <hr class="m-0">
 
-<%--Work experience section starts--%>
+    <%--Work experience section starts--%>
     <c:if test="${star.workExperiences!=null}">
         <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
             <div class="w-100">
@@ -194,9 +194,9 @@
         </section>
         <hr class="m-0">
     </c:if>
-<%--    work experience section ends  --%>
+    <%--    work experience section ends  --%>
 
-<%--    education starts --%>
+    <%--    education starts --%>
     <c:if test="${star.educationExperiences!=null}">
         <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
             <div class="w-100">
@@ -223,16 +223,16 @@
         </section>
         <hr class="m-0">
     </c:if>
-<%--    education ends --%>
+    <%--    education ends --%>
 
-<%--skill stack starts--%>
+    <%--skill stack starts--%>
     <c:if test="${star.skillStack!=null}">
         <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
             <div class="w-100">
                 <h2 class="mb-5">Skills</h2>
 
                 <c:if test="${star.skillStack.hasProgramming}">
-                    <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+                    <div class="subheading mb-1">Programming Languages &amp; Tools</div>
                     <ul class="list-inline dev-icons">
 
                         <c:if test="${star.skillStack.java}">
@@ -364,14 +364,29 @@
                 </c:if>
 
 
+                <c:forEach var="skillGroup" items="${star.skillStack.skillGroups}">
+                    <div class="subheading mb-1 mt-3">${skillGroup.name}</div>
+                    <ul class="fa-ul mb-0">
+                        <c:forEach var="skill" items="${skillGroup.skills}">
+                            <li>
+                                <i class="fa-li fa fa-check"></i>
+                                    ${skill}
+                            </li>
+
+                        </c:forEach>
+                    </ul>
+                </c:forEach>
+
+
+
             </div>
         </section>
         <hr class="m-0">
     </c:if>
-<%--    skill stack ends--%>
+    <%--    skill stack ends--%>
 
 
-<%--    interests starts  --%>
+    <%--    interests starts  --%>
     <c:if test="${star.interests!=null}">
         <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
             <div class="w-100">
@@ -383,53 +398,53 @@
         </section>
         <hr class="m-0">
     </c:if>
-<%--    interests ends--%>
+    <%--    interests ends--%>
 
 
-<%--    awards and certificates section starts--%>
-    <c:if test="${star.awards != null || star.certificates != null}" >
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
-        <div class="w-100">
-            <h2 class="mb-5">Awards &amp; Certifications</h2>
-            <ul class="fa-ul mb-0">
-                <li>
-                    <i class="fa-li fa fa-trophy text-warning"></i>
-                    Google Analytics Certified Developer
-                </li>
-                <li>
-                    <i class="fa-li fa fa-trophy text-warning"></i>
-                    Mobile Web Specialist - Google Certification
-                </li>
-                <li>
-                    <i class="fa-li fa fa-trophy text-warning"></i>
-                    1<sup>st</sup>
-                    Place - University of Colorado Boulder - Emerging Tech Competition 2009
-                </li>
-                <li>
-                    <i class="fa-li fa fa-trophy text-warning"></i>
-                    1<sup>st</sup>
-                    Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
-                </li>
-                <li>
-                    <i class="fa-li fa fa-trophy text-warning"></i>
-                    2<sup>nd</sup>
-                    Place - University of Colorado Boulder - Emerging Tech Competition 2008
-                </li>
-                <li>
-                    <i class="fa-li fa fa-trophy text-warning"></i>
-                    1<sup>st</sup>
-                    Place - James Buchanan High School - Hackathon 2006
-                </li>
-                <li>
-                    <i class="fa-li fa fa-trophy text-warning"></i>
-                    3<sup>rd</sup>
-                    Place - James Buchanan High School - Hackathon 2005
-                </li>
-            </ul>
-        </div>
-    </section>
+    <%--    awards and certificates section starts--%>
+    <c:if test="${star.awards != null || star.certificates != null}">
+        <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
+            <div class="w-100">
+                <h2 class="mb-5">Awards &amp; Certifications</h2>
+                <ul class="fa-ul mb-0">
+                    <li>
+                        <i class="fa-li fa fa-trophy text-warning"></i>
+                        Google Analytics Certified Developer
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-trophy text-warning"></i>
+                        Mobile Web Specialist - Google Certification
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-trophy text-warning"></i>
+                        1<sup>st</sup>
+                        Place - University of Colorado Boulder - Emerging Tech Competition 2009
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-trophy text-warning"></i>
+                        1<sup>st</sup>
+                        Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-trophy text-warning"></i>
+                        2<sup>nd</sup>
+                        Place - University of Colorado Boulder - Emerging Tech Competition 2008
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-trophy text-warning"></i>
+                        1<sup>st</sup>
+                        Place - James Buchanan High School - Hackathon 2006
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-trophy text-warning"></i>
+                        3<sup>rd</sup>
+                        Place - James Buchanan High School - Hackathon 2005
+                    </li>
+                </ul>
+            </div>
+        </section>
     </c:if>
-<%--    awards and certificates ends --%>
+    <%--    awards and certificates ends --%>
 
 </div>
 

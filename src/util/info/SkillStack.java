@@ -251,4 +251,9 @@ public class SkillStack {
     public void setSkillGroups(ArrayList<SkillGroup> skillGroups) {
         this.skillGroups = skillGroups;
     }
+
+    @Override
+    public String toString() {
+        return String.format("have %d groups, the first one is %s", skillGroups.size(), skillGroups.get(0));
+    }
 }
