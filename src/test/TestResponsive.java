@@ -18,6 +18,10 @@ public class TestResponsive extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         ResumeStar testStar = new ResumeStar(1, "Anran", "Niu");
+
+        DesignPreference dp = new DesignPreference();
+        dp.setThemeColor("#fcba03");
+        testStar.setDesignPreference(dp);
         testStar.setBriefIntro("Your up and coming full-stack developer!");
 
         testStar.addEducation(new EducationExperience("University of Auckland", "Master of Information Technology", 9.00, 9.00, new TimeInMonth(11, 2019), new TimeInMonth(true)));

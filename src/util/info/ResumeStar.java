@@ -23,6 +23,8 @@ public class ResumeStar {
     private SkillStack skillStack;
     private List<String> interests;
 
+    private DesignPreference designPreference;
+
     public ResumeStar() {
     }
 
@@ -33,6 +35,14 @@ public class ResumeStar {
         this.name = this.firstName + " " + this.lastName;
         this.name = firstName + " " + lastName;
 
+    }
+
+    public DesignPreference getDesignPreference() {
+        return designPreference;
+    }
+
+    public void setDesignPreference(DesignPreference designPreference) {
+        this.designPreference = designPreference;
     }
 
     public List<String> getInterests() {

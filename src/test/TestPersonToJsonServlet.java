@@ -59,6 +59,10 @@ public class TestPersonToJsonServlet extends HttpServlet {
 
         testStar.setSkillStack(skillStack);
 
+        DesignPreference dp = new DesignPreference();
+        dp.setThemeColor("#2f8cde");
+        testStar.setDesignPreference(dp);
+
         testStar.setPersonalLinks(personalLinks);
         testStar.setImagePath("./images/anran-profile.png");
 

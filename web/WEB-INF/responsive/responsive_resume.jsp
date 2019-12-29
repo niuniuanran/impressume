@@ -28,6 +28,37 @@
     <link href='<c:url value="/node_modules/startbootstrap-resume/vendor/fontawesome-free/css/all.min.css"/>'
           rel="stylesheet">
 
+    <c:if test="${star.designPreference!=null}">
+    <style>
+        :root{
+            --customized-theme-color: ${star.designPreference.themeColor};
+            --customized-heavy-color: ${star.designPreference.heavyColor};
+            --customized-light-color: ${star.designPreference.lightColor};
+        }
+        .bg-primary {
+            background-color: var(--customized-theme-color) !important;
+        }
+        .text-primary {
+            color: var(--customized-theme-color) !important;
+        }
+        a {
+            color:var(--customized-theme-color);
+        }
+        a:hover, a:focus, a:active {
+            color: var(--customized-heavy-color);
+        }
+        #sideNav .navbar-toggler:focus {
+            outline-color: var(--customized-light-color);
+        }
+        .social-icons a:hover {
+            background-color: var(--customized-theme-color);
+        }
+        .dev-icons .list-inline-item i:hover {
+            color: var(--customized-theme-color);
+        }
+    </style>
+    </c:if>
+
 
 </head>
 
