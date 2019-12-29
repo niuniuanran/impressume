@@ -72,15 +72,15 @@
                 </li>
             </c:if>
 
-            <c:if test="${star.interests!=null}">
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-                </li>
-            </c:if>
-
             <c:if test="${star.awards!=null || star.certificates != null}">
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+                </li>
+            </c:if>
+
+            <c:if test="${star.interests!=null}">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
                 </li>
             </c:if>
         </ul>
@@ -378,13 +378,57 @@
                 </c:forEach>
 
 
-
             </div>
         </section>
         <hr class="m-0">
     </c:if>
     <%--    skill stack ends--%>
 
+
+    <%--    awards and certificates section starts--%>
+    <c:if test="${star.awards != null || star.certificates != null}">
+        <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
+            <div class="w-100">
+                <h2 class="mb-5">Awards &amp; Certifications</h2>
+                <ul class="fa-ul mb-0">
+                    <c:forEach var="certificate" items="${star.certificates}">
+                        <li>
+                            <i class="fa-li fa fa-certificate text-warning"></i>
+                            <c:if test="${certificate.certificateLink == null}">
+                                ${certificate.name}
+                            </c:if>
+                            <c:if test="${certificate.certificateLink!=null}">
+                                <a href="${certificate.certificateLink}" target="_blank"> ${certificate.name}</a>
+                            </c:if>
+                            <c:if test="${certificate.issuerLink!=null}">
+                                · issued by: <a href="${certificate.issuerLink}"
+                                                target="_blank"> ${certificate.issuerName}</a>
+                            </c:if>
+                            <c:if test="${certificate.issuerName!=null && certificate.issuerLink==null}">
+                                · issued by: ${certificate.issuerName}
+                            </c:if>
+                        </li>
+
+                    </c:forEach>
+                </ul>
+
+                                    <ul class="fa-ul mb-0 mt-3">
+                                        <c:forEach var="award" items="${star.awards}">
+                                            <li>
+                                                <i class="fa-li fa fa-trophy text-warning"></i>
+                                                ${award.name} · ${award.time}
+
+                                                <c:if test="${award.issuerName!=null}">
+                                                    · ${award.issuerName}
+                                                </c:if>
+                                            </li>
+
+                                        </c:forEach>
+                                    </ul>
+            </div>
+        </section>
+    </c:if>
+    <%--    awards and certificates ends --%>
 
     <%--    interests starts  --%>
     <c:if test="${star.interests!=null}">
@@ -400,51 +444,6 @@
     </c:if>
     <%--    interests ends--%>
 
-
-    <%--    awards and certificates section starts--%>
-    <c:if test="${star.awards != null || star.certificates != null}">
-        <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
-            <div class="w-100">
-                <h2 class="mb-5">Awards &amp; Certifications</h2>
-                <ul class="fa-ul mb-0">
-                    <li>
-                        <i class="fa-li fa fa-trophy text-warning"></i>
-                        Google Analytics Certified Developer
-                    </li>
-                    <li>
-                        <i class="fa-li fa fa-trophy text-warning"></i>
-                        Mobile Web Specialist - Google Certification
-                    </li>
-                    <li>
-                        <i class="fa-li fa fa-trophy text-warning"></i>
-                        1<sup>st</sup>
-                        Place - University of Colorado Boulder - Emerging Tech Competition 2009
-                    </li>
-                    <li>
-                        <i class="fa-li fa fa-trophy text-warning"></i>
-                        1<sup>st</sup>
-                        Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
-                    </li>
-                    <li>
-                        <i class="fa-li fa fa-trophy text-warning"></i>
-                        2<sup>nd</sup>
-                        Place - University of Colorado Boulder - Emerging Tech Competition 2008
-                    </li>
-                    <li>
-                        <i class="fa-li fa fa-trophy text-warning"></i>
-                        1<sup>st</sup>
-                        Place - James Buchanan High School - Hackathon 2006
-                    </li>
-                    <li>
-                        <i class="fa-li fa fa-trophy text-warning"></i>
-                        3<sup>rd</sup>
-                        Place - James Buchanan High School - Hackathon 2005
-                    </li>
-                </ul>
-            </div>
-        </section>
-    </c:if>
-    <%--    awards and certificates ends --%>
 
 </div>
 

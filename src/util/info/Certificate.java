@@ -13,7 +13,17 @@ public class Certificate {
         this.name = name;
         this.certificateLink = certificateLink;
         this.issuerName = issuerName;
-        this.issuerLink = issuerLink;
+        this.issuerLink = addProtocol(issuerLink);
+    }
+
+    public Certificate(String name, String issuerName, String issuerLink) {
+        this.name = name;
+        this.issuerName = issuerName;
+        this.issuerLink = addProtocol(issuerLink);
+    }
+
+    public Certificate(String name) {
+        this.name = name;
     }
 
     public String getCertificateLink() {
@@ -45,6 +55,10 @@ public class Certificate {
     }
 
     public void setIssuerLink(String issuerLink) {
-        this.issuerLink = issuerLink;
+        this.issuerLink = addProtocol(issuerLink);
+    }
+    private String addProtocol(String url) {
+        if (url.startsWith("https://") || url.startsWith("http://")) return url;
+        else return "https://" + url;
     }
 }

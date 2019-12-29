@@ -2,24 +2,21 @@ package util.info;
 
 public class Award {
     private String name;
-    private String time;
+    private TimeInMonth time;
     private String issuerName;
-    private String issuerLink;
 
     public Award() {
     }
 
-    public Award(String name, String time, String issuerName) {
+    public Award(String name, TimeInMonth time, String issuerName) {
         this.name = name;
         this.time = time;
         this.issuerName = issuerName;
     }
 
-    public Award(String name, String time, String issuerName, String issuerLink) {
-        this.name = name;
-        this.time = time;
-        this.issuerName = issuerName;
-        this.issuerLink = issuerLink;
+    public Award(String name, TimeInMonth time){
+        this.name=name;
+        this.time=time;
     }
 
     public String getName() {
@@ -30,11 +27,11 @@ public class Award {
         this.name = name;
     }
 
-    public String getTime() {
+    public TimeInMonth getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(TimeInMonth time) {
         this.time = time;
     }
 
@@ -46,11 +43,4 @@ public class Award {
         this.issuerName = issuerName;
     }
 
-    public String getIssuerLink() {
-        return issuerLink;
-    }
-
-    public void setIssuerLink(String issuerLink) {
-        this.issuerLink = issuerLink;
-    }
 }

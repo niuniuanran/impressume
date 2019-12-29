@@ -65,12 +65,14 @@ public class TestResponsive extends HttpServlet {
         testStar.setImagePath("./images/anran-profile.png");
 
         testStar.addWork(new WorkExperience("Junior Web Developer", "Air NZ", "Developed something",new TimeInMonth(11, 2020), new TimeInMonth(true), "www.airnewzealand.co.nz"));
-        req.setAttribute("star", testStar);
 
+        testStar.addAward(new Award("First place", new TimeInMonth(3, 2020), "Some contest"));
+        testStar.addCertificate(new Certificate("Google web developer certificate", "google", "google.com"));
+        testStar.addCertificate(new Certificate("Amazon something","https://aws.amazon.com/", "amazon", "amazon.com"));
+
+        req.setAttribute("star", testStar);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/responsive/responsive_resume.jsp");
         dispatcher.forward(req, resp);
-
-
 
     }
 }
