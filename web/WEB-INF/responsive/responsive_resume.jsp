@@ -75,7 +75,7 @@
              alt="${star.name}'s profile photo">
             </c:when>
                 <c:otherwise>
-                    <h3 class="mb-0">${star.firstName}</h3>
+                    <h3 class="mb-0">${star.firstName}!</h3>
                     <hr class="m-0">
                 </c:otherwise>
             </c:choose>

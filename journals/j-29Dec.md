@@ -2,6 +2,7 @@ DONE
 <ul>
 <li>Successfully dispatched a star's information onto the responsive page,
 both from direct java object, or from json file!</li>
+<li>Got a substitute styling when the user did not submit a photo.</li>
 </ul>
 
 TODO
