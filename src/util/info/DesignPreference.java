@@ -7,6 +7,12 @@ public class DesignPreference {
 
     public DesignPreference() {
     }
+    public DesignPreference(String themeColor) {
+        this.themeColor = themeColor;
+    }
+
+
+
     public String getThemeColor() {
         return themeColor;
     }
@@ -53,9 +59,6 @@ public class DesignPreference {
     }
 
 
-    public DesignPreference(String themeColor) {
-        this.themeColor = themeColor;
-    }
 
 
 }
