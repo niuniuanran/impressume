@@ -64,10 +64,6 @@ public class TestPersonToJsonServlet extends HttpServlet {
 
         testStar.addWork(new WorkExperience("Junior Web Developer", "Air NZ", "Developed something", new TimeInMonth(11, 2020), new TimeInMonth(true), "www.airnewzealand.co.nz"));
 
-        testStar.addAward(new Award("First place", new TimeInMonth(3, 2020), "Some contest"));
-        testStar.addCertificate(new Certificate("Google web developer certificate", "google", "google.com"));
-        testStar.addCertificate(new Certificate("Amazon something", "https://aws.amazon.com/", "amazon", "amazon.com"));
-
         testStar.addProject(new Project("impressume", "https://dashboard.heroku.com/apps/impressume", "helps people make their responsive and static resume"));
 
         JSONResponse.send(resp, testStar);
