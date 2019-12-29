@@ -69,9 +69,16 @@
         <span class="d-block d-lg-none">${star.name}</span>
         <span class="d-none d-lg-block">
 
-<%--        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src='<c:url value="${star.imagePath}"/>' alt="${star.name}'s profile photo">--%>
+            <c:choose>
+            <c:when test="${star.imagePath != null}">
         <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src='<c:url value="${star.imagePath}"/>'
              alt="${star.name}'s profile photo">
+            </c:when>
+                <c:otherwise>
+                    <h3 class="mb-0">${star.firstName}</h3>
+                    <hr class="m-0">
+                </c:otherwise>
+            </c:choose>
 
       </span>
     </a>
