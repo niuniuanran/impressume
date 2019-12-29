@@ -70,6 +70,8 @@ public class TestResponsive extends HttpServlet {
         testStar.addCertificate(new Certificate("Google web developer certificate", "google", "google.com"));
         testStar.addCertificate(new Certificate("Amazon something","https://aws.amazon.com/", "amazon", "amazon.com"));
 
+        testStar.addProject(new Project("impressume", "https://dashboard.heroku.com/apps/impressume","helps people make their responsive and static resume"));
+
         req.setAttribute("star", testStar);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/responsive/responsive_resume.jsp");
         dispatcher.forward(req, resp);

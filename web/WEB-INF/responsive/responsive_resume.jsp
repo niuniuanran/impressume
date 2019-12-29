@@ -72,6 +72,12 @@
                 </li>
             </c:if>
 
+            <c:if test="${star.projects!=null}">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
+                </li>
+            </c:if>
+
             <c:if test="${star.awards!=null || star.certificates != null}">
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
@@ -383,6 +389,31 @@
         <hr class="m-0">
     </c:if>
     <%--    skill stack ends--%>
+
+    <%--    projects starts  --%>
+    <c:if test="${star.projects!=null}">
+        <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="projects">
+            <div class="w-100">
+                <h2 class="mb-5">Projects</h2>
+                <ul class="fa-ul mb-0">
+                <c:forEach items="${star.projects}" var="project">
+                    <li>
+                        <i class="fa-li fa fa-project-diagram text-warning"></i>
+                        <c:if test="${project.projectLink == null}">
+                            ${project.name}
+                        </c:if>
+                        <c:if test="${project.projectLink!=null}">
+                            <a href="${project.projectLink}" target="_blank"> ${project.name}</a>
+                        </c:if>
+                        <p>${project.description}</p>
+                    </li>
+                </c:forEach>
+                </ul>
+            </div>
+        </section>
+        <hr class="m-0">
+    </c:if>
+    <%--    projects ends--%>
 
 
     <%--    awards and certificates section starts--%>

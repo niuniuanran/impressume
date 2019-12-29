@@ -2,18 +2,26 @@ package util.info;
 
 public class Project {
     private String name;
-    private String link;
-    private String imgURL;
+    private String projectLink;
     private String description;
 
     public Project() {
     }
 
-    public Project(String name, String link, String imgURL, String description) {
+
+    public Project(String name, String description) {
         this.name = name;
-        this.link = link;
-        this.imgURL = imgURL;
         this.description = description;
+    }
+
+    public Project(String name, String projectLink, String description) {
+        this.name = name;
+        this.projectLink = addProtocol(projectLink);
+        this.description = description;
+    }
+    private String addProtocol(String url) {
+        if (url.startsWith("https://") || url.startsWith("http://")) return url;
+        else return "https://" + url;
     }
 
     public String getName() {
@@ -24,21 +32,14 @@ public class Project {
         this.name = name;
     }
 
-    public String getLink() {
-        return link;
+    public String getProjectLink() {
+        return projectLink;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setProjectLink(String projectLink) {
+        this.projectLink = addProtocol(projectLink);
     }
 
-    public String getImgURL() {
-        return imgURL;
-    }
-
-    public void setImgURL(String imgURL) {
-        this.imgURL = imgURL;
-    }
 
     public String getDescription() {
         return description;
