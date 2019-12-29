@@ -19,6 +19,7 @@ public class Project {
         this.projectLink = addProtocol(projectLink);
         this.description = description;
     }
+
     private String addProtocol(String url) {
         if (url.startsWith("https://") || url.startsWith("http://")) return url;
         else return "https://" + url;

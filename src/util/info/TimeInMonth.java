@@ -1,7 +1,7 @@
 package util.info;
 
 public class TimeInMonth {
-    public static final String[] MONTHS = new String[] {"January", "February", "March", "April",
+    public static final String[] MONTHS = new String[]{"January", "February", "March", "April",
             "May", "June", "July", "August", "September", "October", "November", "December"};
     private int month;
     private int year;

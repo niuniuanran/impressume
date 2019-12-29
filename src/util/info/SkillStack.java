@@ -53,7 +53,7 @@ public class SkillStack {
         this.hasProgramming = hasProgramming;
     }
 
-    public void addSkillGroup (SkillGroup skillGroup) {
+    public void addSkillGroup(SkillGroup skillGroup) {
         if (skillGroups == null)
             skillGroups = new ArrayList<>();
         skillGroups.add(skillGroup);

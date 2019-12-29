@@ -57,6 +57,7 @@ public class Certificate {
     public void setIssuerLink(String issuerLink) {
         this.issuerLink = addProtocol(issuerLink);
     }
+
     private String addProtocol(String url) {
         if (url.startsWith("https://") || url.startsWith("http://")) return url;
         else return "https://" + url;

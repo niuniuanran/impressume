@@ -396,18 +396,18 @@
             <div class="w-100">
                 <h2 class="mb-5">Projects</h2>
                 <ul class="fa-ul mb-0">
-                <c:forEach items="${star.projects}" var="project">
-                    <li>
-                        <i class="fa-li fa fa-project-diagram text-warning"></i>
-                        <c:if test="${project.projectLink == null}">
-                            ${project.name}
-                        </c:if>
-                        <c:if test="${project.projectLink!=null}">
-                            <a href="${project.projectLink}" target="_blank"> ${project.name}</a>
-                        </c:if>
-                        <p>${project.description}</p>
-                    </li>
-                </c:forEach>
+                    <c:forEach items="${star.projects}" var="project">
+                        <li>
+                            <i class="fa-li fa fa-project-diagram text-warning"></i>
+                            <c:if test="${project.projectLink == null}">
+                                ${project.name}
+                            </c:if>
+                            <c:if test="${project.projectLink!=null}">
+                                <a href="${project.projectLink}" target="_blank"> ${project.name}</a>
+                            </c:if>
+                            <p>${project.description}</p>
+                        </li>
+                    </c:forEach>
                 </ul>
             </div>
         </section>
@@ -443,19 +443,19 @@
                     </c:forEach>
                 </ul>
 
-                                    <ul class="fa-ul mb-0 mt-3">
-                                        <c:forEach var="award" items="${star.awards}">
-                                            <li>
-                                                <i class="fa-li fa fa-trophy text-warning"></i>
-                                                ${award.name} · ${award.time}
+                <ul class="fa-ul mb-0 mt-3">
+                    <c:forEach var="award" items="${star.awards}">
+                        <li>
+                            <i class="fa-li fa fa-trophy text-warning"></i>
+                                ${award.name} · ${award.time}
 
-                                                <c:if test="${award.issuerName!=null}">
-                                                    · ${award.issuerName}
-                                                </c:if>
-                                            </li>
+                            <c:if test="${award.issuerName!=null}">
+                                · ${award.issuerName}
+                            </c:if>
+                        </li>
 
-                                        </c:forEach>
-                                    </ul>
+                    </c:forEach>
+                </ul>
             </div>
         </section>
     </c:if>

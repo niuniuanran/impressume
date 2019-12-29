@@ -13,7 +13,7 @@ public class SkillGroup {
         this.name = name;
     }
 
-    public SkillGroup (String name, String[] skills){
+    public SkillGroup(String name, String[] skills) {
         this.name = name;
         this.skills = Arrays.asList(skills);
     }
@@ -43,6 +43,6 @@ public class SkillGroup {
 
     @Override
     public String toString() {
-        return name + ": " +skills.toString();
+        return name + ": " + skills.toString();
     }
 }

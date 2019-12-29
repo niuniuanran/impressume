@@ -14,9 +14,9 @@ public class Award {
         this.issuerName = issuerName;
     }
 
-    public Award(String name, TimeInMonth time){
-        this.name=name;
-        this.time=time;
+    public Award(String name, TimeInMonth time) {
+        this.name = name;
+        this.time = time;
     }
 
     public String getName() {

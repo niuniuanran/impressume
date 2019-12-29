@@ -10,10 +10,12 @@ public class WorkExperience {
 
     public WorkExperience() {
     }
+
     private String addProtocol(String url) {
         if (url.startsWith("https://") || url.startsWith("http://")) return url;
         else return "https://" + url;
     }
+
     public WorkExperience(String title, String organizationName, String description,
                           TimeInMonth from, TimeInMonth to, String organizationLink) {
         this.title = title;
@@ -23,6 +25,7 @@ public class WorkExperience {
         this.to = to;
         this.organizationLink = addProtocol(organizationLink);
     }
+
     public WorkExperience(String title, String organizationName, String description,
                           TimeInMonth from, TimeInMonth to) {
         this.title = title;
