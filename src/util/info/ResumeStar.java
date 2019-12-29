@@ -15,25 +15,32 @@ public class ResumeStar {
     private PersonalLinks personalLinks;
 
     private List<EducationExperience> educationExperiences;
-    private List<WorkExperiences> workExperiences;
+    private List<WorkExperience> workExperiences;
     private List<Award> awards;
     private List<Certificate> certificates;
     private List<Project> projects;
 
     private SkillStack skillStack;
+    private List<String> interests;
 
-    public ResumeStar() { }
+    public ResumeStar() {
+    }
+
     public ResumeStar(int id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.name = this.firstName + " " + this.lastName;
         this.name = firstName + " " + lastName;
-        educationExperiences = new ArrayList<>();
-        workExperiences = new ArrayList<>();
-        awards = new ArrayList<>();
-        certificates = new ArrayList<>();
-        projects = new ArrayList<>();
+
+    }
+
+    public List<String> getInterests() {
+        return interests;
+    }
+
+    public void setInterests(List<String> interests) {
+        this.interests = interests;
     }
 
     public String getImagePath() {
@@ -44,20 +51,40 @@ public class ResumeStar {
         this.imagePath = imagePath;
     }
 
-    public void addProject(Project project) {
-        projects.add(project);
-    }
-    public void addEducation (EducationExperience educationExperience) {
+    public void addEducation(EducationExperience educationExperience) {
+        if (educationExperiences == null) educationExperiences = new ArrayList<>();
         educationExperiences.add(educationExperience);
     }
-    public void addWork (WorkExperiences workExperience) {
+
+    public void addWork(WorkExperience workExperience) {
+
+        if (workExperiences == null)
+            workExperiences = new ArrayList<>();
         workExperiences.add(workExperience);
     }
-    public void addAward (Award award) {
+
+    public void addInterest(String interest) {
+        if (interests == null)
+            interests = new ArrayList<>();
+        interests.add(interest);
+    }
+
+    public void addAward(Award award) {
+        if (awards == null)
+            awards = new ArrayList<>();
         awards.add(award);
     }
-    public void addCertificate (Certificate certificate) {
+
+    public void addCertificate(Certificate certificate) {
+        if (certificates == null)
+            certificates = new ArrayList<>();
         certificates.add(certificate);
+    }
+
+    public void addProject(Project project) {
+        if (projects == null)
+            projects = new ArrayList<>();
+        projects.add(project);
     }
 
     public int getId() {
@@ -124,11 +151,11 @@ public class ResumeStar {
         this.educationExperiences = educationExperiences;
     }
 
-    public List<WorkExperiences> getWorkExperiences() {
+    public List<WorkExperience> getWorkExperiences() {
         return workExperiences;
     }
 
-    public void setWorkExperiences(List<WorkExperiences> workExperiences) {
+    public void setWorkExperiences(List<WorkExperience> workExperiences) {
         this.workExperiences = workExperiences;
     }
 
@@ -163,4 +190,5 @@ public class ResumeStar {
     public void setProjects(List<Project> projects) {
         this.projects = projects;
     }
+
 }

@@ -1,26 +1,35 @@
 package util.info;
 
-public class WorkExperiences {
+public class WorkExperience {
     private String title;
-    private String organization;
     private String organizationName;
     private String description;
     private TimeInMonth from;
     private TimeInMonth to;
     private String organizationLink;
 
-    public WorkExperiences() {
+    public WorkExperience() {
     }
-
-    public WorkExperiences(String title, String organization, String organizationName, String description,
-                           TimeInMonth from, TimeInMonth to, String organizationLink) {
+    private String addProtocol(String url) {
+        if (url.startsWith("https://") || url.startsWith("http://")) return url;
+        else return "https://" + url;
+    }
+    public WorkExperience(String title, String organizationName, String description,
+                          TimeInMonth from, TimeInMonth to, String organizationLink) {
         this.title = title;
-        this.organization = organization;
         this.organizationName = organizationName;
         this.description = description;
         this.from = from;
         this.to = to;
-        this.organizationLink = organizationLink;
+        this.organizationLink = addProtocol(organizationLink);
+    }
+    public WorkExperience(String title, String organizationName, String description,
+                          TimeInMonth from, TimeInMonth to) {
+        this.title = title;
+        this.organizationName = organizationName;
+        this.description = description;
+        this.from = from;
+        this.to = to;
     }
 
     public String getTitle() {
@@ -29,14 +38,6 @@ public class WorkExperiences {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getOrganization() {
-        return organization;
-    }
-
-    public void setOrganization(String organization) {
-        this.organization = organization;
     }
 
     public String getOrganizationName() {
@@ -76,6 +77,6 @@ public class WorkExperiences {
     }
 
     public void setOrganizationLink(String organizationLink) {
-        this.organizationLink = organizationLink;
+        this.organizationLink = addProtocol(organizationLink);
     }
 }

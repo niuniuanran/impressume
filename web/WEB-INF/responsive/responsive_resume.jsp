@@ -16,7 +16,8 @@
 
     <title>${star.name}</title>
     <!-- Bootstrap core CSS -->
-    <link href='<c:url value="/node_modules/startbootstrap-resume/vendor/bootstrap/css/bootstrap.min.css"/>' rel="stylesheet">
+    <link href='<c:url value="/node_modules/startbootstrap-resume/vendor/bootstrap/css/bootstrap.min.css"/>'
+          rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href='<c:url value="/node_modules/startbootstrap-resume/css/resume.min.css"/>' rel="stylesheet">
@@ -24,8 +25,8 @@
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-    <link href='<c:url value="/node_modules/startbootstrap-resume/vendor/fontawesome-free/css/all.min.css"/>' rel="stylesheet">
-
+    <link href='<c:url value="/node_modules/startbootstrap-resume/vendor/fontawesome-free/css/all.min.css"/>'
+          rel="stylesheet">
 
 
 </head>
@@ -38,11 +39,13 @@
         <span class="d-none d-lg-block">
 
 <%--        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src='<c:url value="${star.imagePath}"/>' alt="${star.name}'s profile photo">--%>
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src='<c:url value="${star.imagePath}"/>' alt="${star.name}'s profile photo">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src='<c:url value="${star.imagePath}"/>'
+             alt="${star.name}'s profile photo">
 
       </span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -50,21 +53,36 @@
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
-            </li>
+
+            <c:if test="${star.workExperiences!=null}">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+                </li>
+            </c:if>
+
+            <c:if test="${star.educationExperiences!=null}">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+                </li>
+            </c:if>
+
+            <c:if test="${star.skillStack!=null}">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+                </li>
+            </c:if>
+
+            <c:if test="${star.interests!=null}">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
+                </li>
+            </c:if>
+
+            <c:if test="${star.awards!=null || star.certificates != null}">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+                </li>
+            </c:if>
         </ul>
     </div>
 </nav>
@@ -81,17 +99,17 @@
             </div>
             <p class="lead mb-5">${star.briefIntro}</p>
 
-            <div class="social-icons" >
+            <div class="social-icons">
                 <c:if test="${star.personalLinks.linkedInURL != null}">
                     <a href="${star.personalLinks.linkedInURL}" target="_blank">
                         <i class="fab fa-linkedin-in" style="line-height: 3.5rem;"></i>
-<%--
-The style of line-height is added here
-because css style casting order in html and in jsp is different.
-In blackrockdigital's original html, the style of the font-awesome class for .fab is overwritten by line-height specified for .social-icon a
-in resume.min.css, while in the jsp the font-awesome class for .fab overwrites rules for <a>.
-This is why an inline rule is added here to avoid trouble.
---%>
+                            <%--
+                            The style of line-height is added here
+                            because css style casting order in html and in jsp is different.
+                            In blackrockdigital's original html, the style of the font-awesome class for .fab is overwritten by line-height specified for .social-icon a
+                            in resume.min.css, while in the jsp the font-awesome class for .fab overwrites rules for <a>.
+                            This is why an inline rule is added here to avoid trouble.
+                            --%>
                     </a>
                 </c:if>
 
@@ -101,13 +119,37 @@ This is why an inline rule is added here to avoid trouble.
                     </a>
                 </c:if>
 
+                <c:if test="${star.personalLinks.gitLabURL != null}">
+                    <a href="${star.personalLinks.gitLabURL}" target="_blank">
+                        <i class="fab fa-gitlab" style="line-height: 3.5rem;"></i>
+                    </a>
+                </c:if>
+
+                <c:if test="${star.personalLinks.researchGateURL != null}">
+                    <a href="${star.personalLinks.researchGateURL}" target="_blank">
+                        <i class="fab fa-researchgate" style="line-height: 3.5rem;"></i>
+                    </a>
+                </c:if>
+
+                <c:if test="${star.personalLinks.wordPressURL != null}">
+                    <a href="${star.personalLinks.wordPressURL}" target="_blank">
+                        <i class="fab fa-wordpress" style="line-height: 3.5rem;"></i>
+                    </a>
+                </c:if>
+
+                <c:if test="${star.personalLinks.quoraURL != null}">
+                    <a href="${star.personalLinks.quoraURL}" target="_blank">
+                        <i class="fab fa-quora" style="line-height: 3.5rem;"></i>
+                    </a>
+                </c:if>
+
                 <c:if test="${star.personalLinks.twitterURL != null}">
                     <a href="${star.personalLinks.twitterURL}" target="_blank">
                         <i class="fab fa-twitter" style="line-height: 3.5rem;"></i>
                     </a>
                 </c:if>
 
-                <c:if test="${star.personalLinks.facebookURL != null}" >
+                <c:if test="${star.personalLinks.facebookURL != null}">
                     <a href="${star.personalLinks.facebookURL}" target="_blank">
                         <i class="fab fa-facebook-f" style="line-height: 3.5rem;"></i>
                     </a>
@@ -115,202 +157,279 @@ This is why an inline rule is added here to avoid trouble.
             </div>
         </div>
     </section>
-
     <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
-        <div class="w-100">
-            <h2 class="mb-5">Experience</h2>
+<%--Work experience section starts--%>
+    <c:if test="${star.workExperiences!=null}">
+        <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
+            <div class="w-100">
+                <h2 class="mb-5">Experience</h2>
 
-            <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                <div class="resume-content">
-                    <h3 class="mb-0">Senior Web Developer</h3>
-                    <div class="subheading mb-3">Intelitec Solutions</div>
-                    <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
-                </div>
-                <div class="resume-date text-md-right">
-                    <span class="text-primary">March 2013 - Present</span>
-                </div>
+                <c:forEach var="experience" items="${star.workExperiences}">
+
+                    <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="resume-content">
+                            <h3 class="mb-0">${experience.title}</h3>
+
+                            <c:choose>
+                                <c:when test="${experience.organizationLink==null}">
+                                    <div class="subheading mb-3">${experience.organizationName}</div>
+                                </c:when>
+                                <c:otherwise>
+                                    <div class="subheading mb-3"><a
+                                            href='<c:url value="${experience.organizationLink}"/>'
+                                            target="_blank">${experience.organizationName}</a></div>
+                                </c:otherwise>
+                            </c:choose>
+
+                            <p>${experience.description}</p>
+                        </div>
+                        <div class="resume-date text-md-right">
+                            <span class="text-primary">${experience.from} - ${experience.to}</span>
+                        </div>
+                    </div>
+
+                </c:forEach>
             </div>
+        </section>
+        <hr class="m-0">
+    </c:if>
+<%--    work experience section ends  --%>
 
-            <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                <div class="resume-content">
-                    <h3 class="mb-0">Web Developer</h3>
-                    <div class="subheading mb-3">Intelitec Solutions</div>
-                    <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-                </div>
-                <div class="resume-date text-md-right">
-                    <span class="text-primary">December 2011 - March 2013</span>
-                </div>
+<%--    education starts --%>
+    <c:if test="${star.educationExperiences!=null}">
+        <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
+            <div class="w-100">
+                <h2 class="mb-5">Education</h2>
+
+                <c:forEach var="education" items="${star.educationExperiences}">
+                    <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="resume-content">
+                            <h3 class="mb-0">${education.institute}</h3>
+                            <div class="subheading mb-3">${education.name}</div>
+                            <c:if test="${education.specification != null}">
+                                <div>Computer Science - Web Development Track</div>
+                            </c:if>
+                            <c:if test="${education.GPA != null}">
+                                <p>GPA: ${education.GPA} / ${education.fullGPA}</p>
+                            </c:if>
+                        </div>
+                        <div class="resume-date text-md-right">
+                            <span class="text-primary">${education.from} - ${education.to}</span>
+                        </div>
+                    </div>
+                </c:forEach>
             </div>
+        </section>
+        <hr class="m-0">
+    </c:if>
+<%--    education ends --%>
 
-            <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                <div class="resume-content">
-                    <h3 class="mb-0">Junior Web Designer</h3>
-                    <div class="subheading mb-3">Shout! Media Productions</div>
-                    <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
-                </div>
-                <div class="resume-date text-md-right">
-                    <span class="text-primary">July 2010 - December 2011</span>
-                </div>
+<%--skill stack starts--%>
+    <c:if test="${star.skillStack!=null}">
+        <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+            <div class="w-100">
+                <h2 class="mb-5">Skills</h2>
+
+                <c:if test="${star.skillStack.hasProgramming}">
+                    <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+                    <ul class="list-inline dev-icons">
+
+                        <c:if test="${star.skillStack.java}">
+                            <li class="list-inline-item">
+                                <i class="fab fa-java"></i>
+                            </li>
+
+                        </c:if>
+                        <c:if test="${star.skillStack.python}">
+                            <li class="list-inline-item">
+                                <i class="fab fa-python"></i>
+                            </li>
+                        </c:if>
+
+                        <c:if test="${star.skillStack.html5}">
+                            <li class="list-inline-item">
+                                <i class="fab fa-html5"></i>
+                            </li>
+                        </c:if>
+                        <c:if test="${star.skillStack.css3}">
+
+                            <li class="list-inline-item">
+                                <i class="fab fa-css3-alt"></i>
+                            </li>
+
+                        </c:if>
+                        <c:if test="${star.skillStack.js}">
+
+                            <li class="list-inline-item">
+                                <i class="fab fa-js-square"></i>
+                            </li>
+                        </c:if>
+                        <c:if test="${star.skillStack.nodeJS}">
+                            <li class="list-inline-item">
+                                <i class="fab fa-node-js"></i>
+                            </li>
+                        </c:if>
+                        <c:if test="${star.skillStack.angular}">
+
+                            <li class="list-inline-item">
+                                <i class="fab fa-angular"></i>
+                            </li>
+                        </c:if>
+                        <c:if test="${star.skillStack.react}">
+
+                            <li class="list-inline-item">
+                                <i class="fab fa-react"></i>
+                            </li>
+                        </c:if>
+                        <c:if test="${star.skillStack.vue}">
+
+                            <li class="list-inline-item">
+                                <i class="fab fa-vuejs"></i>
+                            </li>
+                        </c:if>
+
+                        <c:if test="${star.skillStack.php}">
+                            <li class="list-inline-item">
+                                <i class="fab fa-php"></i>
+                            </li>
+                        </c:if>
+
+                        <c:if test="${star.skillStack.sass}">
+                            <li class="list-inline-item">
+                                <i class="fab fa-sass"></i>
+                            </li>
+                        </c:if>
+                        <c:if test="${star.skillStack.less}">
+                            <li class="list-inline-item">
+                                <i class="fab fa-less"></i>
+                            </li>
+                        </c:if>
+                        <c:if test="${star.skillStack.wordpress}">
+
+                            <li class="list-inline-item">
+                                <i class="fab fa-wordpress"></i>
+                            </li>
+                        </c:if>
+                        <c:if test="${star.skillStack.gulp}">
+
+                            <li class="list-inline-item">
+                                <i class="fab fa-gulp"></i>
+                            </li>
+                        </c:if>
+                        <c:if test="${star.skillStack.grunt}">
+
+                            <li class="list-inline-item">
+                                <i class="fab fa-grunt"></i>
+                            </li>
+                        </c:if>
+                        <c:if test="${star.skillStack.npm}">
+
+                            <li class="list-inline-item">
+                                <i class="fab fa-npm"></i>
+                            </li>
+                        </c:if>
+                        <c:if test="${star.skillStack.yarn}">
+                            <li class="list-inline-item">
+                                <i class="fab fa-yarn"></i>
+                            </li>
+                        </c:if>
+
+                        <c:if test="${star.skillStack.swift}">
+                            <li class="list-inline-item">
+                                <i class="fab fa-swift"></i>
+                            </li>
+                        </c:if>
+                        <c:if test="${star.skillStack.adobe}">
+                            <li class="list-inline-item">
+                                <i class="fab fa-adobe"></i>
+                            </li>
+                        </c:if>
+                        <c:if test="${star.skillStack.aws}">
+                            <li class="list-inline-item">
+                                <i class="fab fa-aws"></i>
+                            </li>
+                        </c:if>
+                        <c:if test="${star.skillStack.suse}">
+                            <li class="list-inline-item">
+                                <i class="fab fa-suse"></i>
+                            </li>
+                        </c:if>
+                        <c:if test="${star.skillStack.ubuntu}">
+                            <li class="list-inline-item">
+                                <i class="fab fa-ubutu"></i>
+                            </li>
+                        </c:if>
+                    </ul>
+                </c:if>
+
+
             </div>
+        </section>
+        <hr class="m-0">
+    </c:if>
+<%--    skill stack ends--%>
 
-            <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-                <div class="resume-content">
-                    <h3 class="mb-0">Web Design Intern</h3>
-                    <div class="subheading mb-3">Shout! Media Productions</div>
-                    <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-                </div>
-                <div class="resume-date text-md-right">
-                    <span class="text-primary">September 2008 - June 2010</span>
-                </div>
+
+<%--    interests starts  --%>
+    <c:if test="${star.interests!=null}">
+        <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
+            <div class="w-100">
+                <h2 class="mb-5">Interests</h2>
+                <c:forEach items="${star.interests}" var="interest">
+                    <p>${interest}</p>
+                </c:forEach>
             </div>
+        </section>
+        <hr class="m-0">
+    </c:if>
+<%--    interests ends--%>
 
-        </div>
 
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
-        <div class="w-100">
-            <h2 class="mb-5">Education</h2>
-
-            <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                <div class="resume-content">
-                    <h3 class="mb-0">University of Colorado Boulder</h3>
-                    <div class="subheading mb-3">Bachelor of Science</div>
-                    <div>Computer Science - Web Development Track</div>
-                    <p>GPA: 3.23</p>
-                </div>
-                <div class="resume-date text-md-right">
-                    <span class="text-primary">August 2006 - May 2010</span>
-                </div>
-            </div>
-
-            <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-                <div class="resume-content">
-                    <h3 class="mb-0">James Buchanan High School</h3>
-                    <div class="subheading mb-3">Technology Magnet Program</div>
-                    <p>GPA: 3.56</p>
-                </div>
-                <div class="resume-date text-md-right">
-                    <span class="text-primary">August 2002 - May 2006</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
-        <div class="w-100">
-            <h2 class="mb-5">Skills</h2>
-
-            <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-            <ul class="list-inline dev-icons">
-                <li class="list-inline-item">
-                    <i class="fab fa-html5"></i>
-                </li>
-                <li class="list-inline-item">
-                    <i class="fab fa-css3-alt"></i>
-                </li>
-                <li class="list-inline-item">
-                    <i class="fab fa-js-square"></i>
-                </li>
-                <li class="list-inline-item">
-                    <i class="fab fa-angular"></i>
-                </li>
-                <li class="list-inline-item">
-                    <i class="fab fa-react"></i>
-                </li>
-                <li class="list-inline-item">
-                    <i class="fab fa-node-js"></i>
-                </li>
-                <li class="list-inline-item">
-                    <i class="fab fa-sass"></i>
-                </li>
-                <li class="list-inline-item">
-                    <i class="fab fa-less"></i>
-                </li>
-                <li class="list-inline-item">
-                    <i class="fab fa-wordpress"></i>
-                </li>
-                <li class="list-inline-item">
-                    <i class="fab fa-gulp"></i>
-                </li>
-                <li class="list-inline-item">
-                    <i class="fab fa-grunt"></i>
-                </li>
-                <li class="list-inline-item">
-                    <i class="fab fa-npm"></i>
-                </li>
-            </ul>
-
-            <div class="subheading mb-3">Workflow</div>
-            <ul class="fa-ul mb-0">
-                <li>
-                    <i class="fa-li fa fa-check"></i>
-                    Mobile-First, Responsive Design</li>
-                <li>
-                    <i class="fa-li fa fa-check"></i>
-                    Cross Browser Testing &amp; Debugging</li>
-                <li>
-                    <i class="fa-li fa fa-check"></i>
-                    Cross Functional Teams</li>
-                <li>
-                    <i class="fa-li fa fa-check"></i>
-                    Agile Development &amp; Scrum</li>
-            </ul>
-        </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
-        <div class="w-100">
-            <h2 class="mb-5">Interests</h2>
-            <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-            <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
-        </div>
-    </section>
-
-    <hr class="m-0">
-
+<%--    awards and certificates section starts--%>
+    <c:if test="${star.awards != null || star.certificates != null}" >
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
         <div class="w-100">
             <h2 class="mb-5">Awards &amp; Certifications</h2>
             <ul class="fa-ul mb-0">
                 <li>
                     <i class="fa-li fa fa-trophy text-warning"></i>
-                    Google Analytics Certified Developer</li>
+                    Google Analytics Certified Developer
+                </li>
                 <li>
                     <i class="fa-li fa fa-trophy text-warning"></i>
-                    Mobile Web Specialist - Google Certification</li>
+                    Mobile Web Specialist - Google Certification
+                </li>
                 <li>
                     <i class="fa-li fa fa-trophy text-warning"></i>
                     1<sup>st</sup>
-                    Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
+                    Place - University of Colorado Boulder - Emerging Tech Competition 2009
+                </li>
                 <li>
                     <i class="fa-li fa fa-trophy text-warning"></i>
                     1<sup>st</sup>
-                    Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
+                    Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
+                </li>
                 <li>
                     <i class="fa-li fa fa-trophy text-warning"></i>
                     2<sup>nd</sup>
-                    Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
+                    Place - University of Colorado Boulder - Emerging Tech Competition 2008
+                </li>
                 <li>
                     <i class="fa-li fa fa-trophy text-warning"></i>
                     1<sup>st</sup>
-                    Place - James Buchanan High School - Hackathon 2006</li>
+                    Place - James Buchanan High School - Hackathon 2006
+                </li>
                 <li>
                     <i class="fa-li fa fa-trophy text-warning"></i>
                     3<sup>rd</sup>
-                    Place - James Buchanan High School - Hackathon 2005</li>
+                    Place - James Buchanan High School - Hackathon 2005
+                </li>
             </ul>
         </div>
     </section>
+    </c:if>
+<%--    awards and certificates ends --%>
 
 </div>
 

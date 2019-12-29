@@ -4,7 +4,8 @@ public class EducationExperience {
     private String institute;
     private String name;
     private String specification;
-    private double GPA;
+    private Double GPA;
+    private double fullGPA = 9.00;
     private TimeInMonth from;
     private TimeInMonth to;
 
@@ -19,19 +20,21 @@ public class EducationExperience {
         this.to = to;
     }
 
-    public EducationExperience(String institute, String name, String specification, double GPA, TimeInMonth from, TimeInMonth to) {
+    public EducationExperience(String institute, String name, String specification, double GPA, double fullGPA, TimeInMonth from, TimeInMonth to) {
         this.institute = institute;
         this.name = name;
         this.specification = specification;
         this.GPA = GPA;
+        this.fullGPA = fullGPA;
         this.from = from;
         this.to = to;
     }
 
-    public EducationExperience(String institute, String name, double GPA, TimeInMonth from, TimeInMonth to) {
+    public EducationExperience(String institute, String name, double GPA, double fullGPA, TimeInMonth from, TimeInMonth to) {
         this.institute = institute;
         this.name = name;
         this.GPA = GPA;
+        this.fullGPA = fullGPA;
         this.from = from;
         this.to = to;
     }
@@ -67,14 +70,6 @@ public class EducationExperience {
         this.specification = specification;
     }
 
-    public double getGPA() {
-        return GPA;
-    }
-
-    public void setGPA(double GPA) {
-        this.GPA = GPA;
-    }
-
     public TimeInMonth getFrom() {
         return from;
     }
@@ -89,5 +84,21 @@ public class EducationExperience {
 
     public void setTo(TimeInMonth to) {
         this.to = to;
+    }
+
+    public void setGPA(Double GPA) {
+        this.GPA = GPA;
+    }
+
+    public Double getGPA() {
+        return GPA;
+    }
+
+    public double getFullGPA() {
+        return fullGPA;
+    }
+
+    public void setFullGPA(double fullGPA) {
+        this.fullGPA = fullGPA;
     }
 }
