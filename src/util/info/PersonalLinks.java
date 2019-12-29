@@ -1,5 +1,7 @@
 package util.info;
 
+import util.AddProtocol;
+
 public class PersonalLinks {
     private String linkedInURL;
     private String gitHubURL;
@@ -13,17 +15,12 @@ public class PersonalLinks {
     public PersonalLinks() {
     }
 
-    private String addProtocol(String url) {
-        if (url.startsWith("https://") || url.startsWith("http://")) return url;
-        else return "https://" + url;
-    }
-
     public String getResearchGateURL() {
         return researchGateURL;
     }
 
     public void setResearchGateURL(String researchGateURL) {
-        this.researchGateURL = addProtocol(researchGateURL);
+        this.researchGateURL = AddProtocol.addProtocol(researchGateURL);
     }
 
     public String getWordPressURL() {
@@ -31,7 +28,7 @@ public class PersonalLinks {
     }
 
     public void setWordPressURL(String wordPressURL) {
-        this.wordPressURL = addProtocol(wordPressURL);
+        this.wordPressURL = AddProtocol.addProtocol(wordPressURL);
     }
 
     public String getQuoraURL() {
@@ -39,7 +36,7 @@ public class PersonalLinks {
     }
 
     public void setQuoraURL(String quoraURL) {
-        this.quoraURL = addProtocol(quoraURL);
+        this.quoraURL = AddProtocol.addProtocol(quoraURL);
     }
 
     public String getGitLabURL() {
@@ -47,7 +44,7 @@ public class PersonalLinks {
     }
 
     public void setGitLabURL(String gitLabURL) {
-        this.gitLabURL = addProtocol(gitLabURL);
+        this.gitLabURL = AddProtocol.addProtocol(gitLabURL);
     }
 
     public String getLinkedInURL() {
@@ -63,7 +60,7 @@ public class PersonalLinks {
     }
 
     public void setGitHubURL(String gitHutURL) {
-        this.gitHubURL = addProtocol(gitHutURL);
+        this.gitHubURL = AddProtocol.addProtocol(gitHutURL);
     }
 
     public String getTwitterURL() {
@@ -71,7 +68,7 @@ public class PersonalLinks {
     }
 
     public void setTwitterURL(String twitterURL) {
-        this.twitterURL = addProtocol(twitterURL);
+        this.twitterURL = AddProtocol.addProtocol(twitterURL);
     }
 
     public String getFacebookURL() {
@@ -79,7 +76,7 @@ public class PersonalLinks {
     }
 
     public void setFacebookURL(String facebookURL) {
-        this.facebookURL = addProtocol(facebookURL);
+        this.facebookURL = AddProtocol.addProtocol(facebookURL);
 
     }
 

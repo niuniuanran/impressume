@@ -1,5 +1,7 @@
 package util.info;
 
+import static util.AddProtocol.addProtocol;
+
 public class Certificate {
     private String name;
     private String certificateLink;
@@ -58,8 +60,5 @@ public class Certificate {
         this.issuerLink = addProtocol(issuerLink);
     }
 
-    private String addProtocol(String url) {
-        if (url.startsWith("https://") || url.startsWith("http://")) return url;
-        else return "https://" + url;
-    }
+
 }

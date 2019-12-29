@@ -9,6 +9,9 @@ public class SkillGroup {
     private String name;
     private List<String> skills;
 
+    public SkillGroup() {
+    }
+
     public SkillGroup(String name) {
         this.name = name;
     }

@@ -1,5 +1,7 @@
 package util.info;
 
+import static util.AddProtocol.addProtocol;
+
 public class Project {
     private String name;
     private String projectLink;
@@ -20,10 +22,7 @@ public class Project {
         this.description = description;
     }
 
-    private String addProtocol(String url) {
-        if (url.startsWith("https://") || url.startsWith("http://")) return url;
-        else return "https://" + url;
-    }
+
 
     public String getName() {
         return name;

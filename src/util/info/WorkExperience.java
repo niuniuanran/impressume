@@ -1,5 +1,7 @@
 package util.info;
 
+import static util.AddProtocol.addProtocol;
+
 public class WorkExperience {
     private String title;
     private String organizationName;
@@ -11,10 +13,6 @@ public class WorkExperience {
     public WorkExperience() {
     }
 
-    private String addProtocol(String url) {
-        if (url.startsWith("https://") || url.startsWith("http://")) return url;
-        else return "https://" + url;
-    }
 
     public WorkExperience(String title, String organizationName, String description,
                           TimeInMonth from, TimeInMonth to, String organizationLink) {
