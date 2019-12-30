@@ -48,7 +48,7 @@
             </p>
             <p class="temp-info">
                 At this stage I just basically finished the product part (you might have seen some CV's I made for my
-                friends). Here's an <a href="./yatian_wang">example</a> resume for my friend Yatian.
+                friends).
             </p>
             <p class="temp-info">
                 Please feel free to contact me if you have any suggestions on what this page and the CV
