@@ -29,7 +29,6 @@
 <%--  <p><a href='<c:url value="/test-to-json"/>' >Test to json</a></p>--%>
 <%--   <p><a href='<c:url value="/test-responsive"/>' >Test Responsive</a></p><p>--%>
 <%--    <a href='<c:url value="/test-json-to-responsive"/>' >Test json to responsive</a></p>--%>
-UPDATED
 <div id="homepage-container">
     <div class="abs-position light-bg theme-bg-transition" id="top-left-rect">
         <h1 class="homepage-title" id="title-imp">imp</h1>
