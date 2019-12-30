@@ -9,6 +9,7 @@ public class ResumeStar {
     private String firstName;
     private String lastName;
     private String briefIntro;
+    private String longerIntro;
     private String imagePath;
 
     private ContactDetail contactDetail;
@@ -19,11 +20,16 @@ public class ResumeStar {
     private List<Award> awards;
     private List<Certificate> certificates;
     private List<Project> projects;
+    private List<WorkExperience> communityExperiences;
 
     private SkillStack skillStack;
     private List<String> interests;
 
     private DesignPreference designPreference;
+
+    private ArrayList<Reference> references;
+    private ArrayList<String> otherInfos;
+
 
     public ResumeStar() {
     }
@@ -36,13 +42,62 @@ public class ResumeStar {
         this.name = firstName + " " + lastName;
 
     }
+    public void addReference (Reference reference) {
+        if (references==null)
+            references = new ArrayList<>();
+        references.add(reference);
+
+    }
+
+    public ArrayList<String> getOtherInfos() {
+        return otherInfos;
+    }
+
+    public void setOtherInfos(ArrayList<String> otherInfos) {
+        this.otherInfos = otherInfos;
+    }
+    public void addOtherInfo(String otherInfo) {
+        if (this.otherInfos == null)
+            otherInfos = new ArrayList<>();
+        otherInfos.add(otherInfo);
+    }
+
+    public ArrayList<Reference> getReferences() {
+        return references;
+    }
+
+    public void setReferences(ArrayList<Reference> references) {
+        this.references = references;
+    }
 
     public DesignPreference getDesignPreference() {
         return designPreference;
     }
 
+    public void addCommunityExperiences(WorkExperience community) {
+        if (communityExperiences == null)
+             communityExperiences = new ArrayList<>();
+        communityExperiences.add(community);
+
+    }
+    public List<WorkExperience> getCommunityExperiences() {
+        return communityExperiences;
+    }
+
+    public void setCommunityExperiences(List<WorkExperience> communityExperiences) {
+        this.communityExperiences = communityExperiences;
+    }
+
     public void setDesignPreference(DesignPreference designPreference) {
         this.designPreference = designPreference;
+    }
+
+    public String getLongerIntro() {
+        return longerIntro;
+    }
+
+    public void setLongerIntro(String longerIntro) {
+        this.longerIntro = longerIntro;
     }
 
     public List<String> getInterests() {

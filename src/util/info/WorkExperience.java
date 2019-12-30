@@ -1,24 +1,35 @@
 package util.info;
 
+import java.util.ArrayList;
+
 import static util.AddProtocol.addProtocol;
 
 public class WorkExperience {
     private String title;
     private String organizationName;
-    private String description;
+    private ArrayList<String> descriptions;
     private TimeInMonth from;
     private TimeInMonth to;
     private String organizationLink;
+    private String place;
 
     public WorkExperience() {
     }
 
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
 
     public WorkExperience(String title, String organizationName, String description,
                           TimeInMonth from, TimeInMonth to, String organizationLink) {
         this.title = title;
         this.organizationName = organizationName;
-        this.description = description;
+        this.descriptions = new ArrayList<>();
+        descriptions.add(description);
         this.from = from;
         this.to = to;
         this.organizationLink = addProtocol(organizationLink);
@@ -28,9 +39,40 @@ public class WorkExperience {
                           TimeInMonth from, TimeInMonth to) {
         this.title = title;
         this.organizationName = organizationName;
-        this.description = description;
+        this.descriptions = new ArrayList<>();
+        descriptions.add(description);
         this.from = from;
         this.to = to;
+    }
+
+    public WorkExperience(String title, String organizationName, TimeInMonth from, TimeInMonth to) {
+        this.title = title;
+        this.organizationName = organizationName;
+        this.from = from;
+        this.to = to;
+    }
+
+    public WorkExperience(String title, String organizationName, TimeInMonth from, TimeInMonth to, String place, String description) {
+        this.title = title;
+        this.organizationName = organizationName;
+        this.from = from;
+        this.to = to;
+        this.place = place;
+        descriptions = new ArrayList<>();
+        descriptions.add(description);
+    }
+
+    public ArrayList<String> getDescriptions() {
+        return descriptions;
+    }
+
+    public void setDescriptions(ArrayList<String> descriptions) {
+        this.descriptions = descriptions;
+    }
+    public void addDescription(String description) {
+        if (descriptions == null)
+            descriptions = new ArrayList<>();
+        descriptions.add(description);
     }
 
     public String getTitle() {
@@ -49,13 +91,6 @@ public class WorkExperience {
         this.organizationName = organizationName;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public TimeInMonth getFrom() {
         return from;

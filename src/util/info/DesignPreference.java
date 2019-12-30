@@ -25,15 +25,10 @@ public class DesignPreference {
     private void setLighterHeavier () {
         lightColor= "#";
         heavyColor = "#";
-        System.out.println("theme:" + themeColor);
         for (int i = 0; i < 3; i++) {
             int c = Integer.parseInt(themeColor.substring(1+i*2,3+i*2), 16);
-            System.out.println("c: " + c);
-            lightColor += twoDigit(Integer.toHexString((int) Math.round(c * 1.2)));
-            heavyColor += twoDigit(Integer.toHexString((int) Math.round(c * 0.8)));
         }
-        System.out.println("heavy:" + heavyColor);
-        System.out.println("light:" + lightColor);
+
 
     }
     private String twoDigit(String c){

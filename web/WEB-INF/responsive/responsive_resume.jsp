@@ -29,34 +29,19 @@
           rel="stylesheet">
 
     <c:if test="${star.designPreference!=null}">
-    <style>
-        :root{
-            --customized-theme-color: ${star.designPreference.themeColor};
-            --customized-heavy-color: ${star.designPreference.heavyColor};
-            --customized-light-color: ${star.designPreference.lightColor};
-        }
-        .bg-primary {
-            background-color: var(--customized-theme-color) !important;
-        }
-        .text-primary {
-            color: var(--customized-theme-color) !important;
-        }
-        a {
-            color:var(--customized-theme-color);
-        }
-        a:hover, a:focus, a:active {
-            color: var(--customized-heavy-color);
-        }
-        #sideNav .navbar-toggler:focus {
-            outline-color: var(--customized-light-color);
-        }
-        .social-icons a:hover {
-            background-color: var(--customized-theme-color);
-        }
-        .dev-icons .list-inline-item i:hover {
-            color: var(--customized-theme-color);
-        }
-    </style>
+
+        <link href="<c:url value="/imp-styling/imp-styling.css"/> " rel="stylesheet">
+
+        <script>
+            document.documentElement.style
+                .setProperty('--customized-theme-color', `${star.designPreference.themeColor}`);
+            document.documentElement.style
+                .setProperty('--customized-light-color', `${star.designPreference.lightColor}`);
+            document.documentElement.style
+                .setProperty('--customized-heavy-color', `${star.designPreference.heavyColor}`);
+        </script>
+
+
     </c:if>
 
 
@@ -70,10 +55,10 @@
         <span class="d-none d-lg-block">
 
             <c:choose>
-            <c:when test="${star.imagePath != null}">
+                <c:when test="${star.imagePath != null}">
         <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src='<c:url value="${star.imagePath}"/>'
              alt="${star.name}'s profile photo">
-            </c:when>
+                </c:when>
                 <c:otherwise>
                     <h3 class="mb-0">${star.firstName}!</h3>
                     <hr class="m-0">
@@ -115,6 +100,11 @@
                     <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
                 </li>
             </c:if>
+            <c:if test="${star.communityExperiences!=null}">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#community">Community</a>
+                </li>
+            </c:if>
 
             <c:if test="${star.awards!=null || star.certificates != null}">
                 <li class="nav-item">
@@ -125,6 +115,16 @@
             <c:if test="${star.interests!=null}">
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
+                </li>
+            </c:if>
+            <c:if test="${star.references!=null}">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#references">References</a>
+                </li>
+            </c:if>
+            <c:if test="${star.otherInfos!=null}">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#others">Other Info</a>
                 </li>
             </c:if>
         </ul>
@@ -226,10 +226,18 @@
                                 </c:otherwise>
                             </c:choose>
 
-                            <p>${experience.description}</p>
+                            <c:forEach var="description" items="${experience.descriptions}">
+                                <li>
+                                        ${description}
+                                </li>
+                            </c:forEach>
+
                         </div>
                         <div class="resume-date text-md-right">
-                            <span class="text-primary">${experience.from} - ${experience.to}</span>
+                            <c:if test="${experience.place != null}">
+                                <p class="text-primary">${experience.place}</p>
+                            </c:if>
+                            <p class="text-primary">${experience.from} - ${experience.to}</p>
                         </div>
                     </div>
 
@@ -252,7 +260,7 @@
                             <h3 class="mb-0">${education.institute}</h3>
                             <div class="subheading mb-3">${education.name}</div>
                             <c:if test="${education.specification != null}">
-                                <div>Computer Science - Web Development Track</div>
+                                <div>C${education.specification}</div>
                             </c:if>
                             <c:if test="${education.GPA != null}">
                                 <p>GPA: ${education.GPA} / ${education.fullGPA}</p>
@@ -453,6 +461,51 @@
     </c:if>
     <%--    projects ends--%>
 
+    <%--    community starts--%>
+    <c:if test="${star.communityExperiences!=null}">
+        <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="community">
+            <div class="w-100">
+                <h2 class="mb-5">Community Experiences</h2>
+
+                <c:forEach var="experience" items="${star.communityExperiences}">
+
+                    <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="resume-content">
+                            <h3 class="mb-0">${experience.title}</h3>
+
+                            <c:choose>
+                                <c:when test="${experience.organizationLink==null}">
+                                    <div class="subheading mb-3">${experience.organizationName}</div>
+                                </c:when>
+                                <c:otherwise>
+                                    <div class="subheading mb-3"><a
+                                            href='<c:url value="${experience.organizationLink}"/>'
+                                            target="_blank">${experience.organizationName}</a></div>
+                                </c:otherwise>
+                            </c:choose>
+
+                            <c:forEach var="description" items="${experience.descriptions}">
+                                <li>
+                                        ${description}
+                                </li>
+                            </c:forEach>
+
+                        </div>
+                        <div class="resume-date text-md-right">
+                            <c:if test="${experience.place != null}">
+                                <p class="text-primary">${experience.place}</p>
+                            </c:if>
+                            <p class="text-primary">${experience.from} - ${experience.to}</p>
+                        </div>
+                    </div>
+
+                </c:forEach>
+            </div>
+        </section>
+        <hr class="m-0">
+    </c:if>
+    <%--    community experience section ends  --%>
+
 
     <%--    awards and certificates section starts--%>
     <c:if test="${star.awards != null || star.certificates != null}">
@@ -512,6 +565,39 @@
         <hr class="m-0">
     </c:if>
     <%--    interests ends--%>
+
+    <%--    references starts  --%>
+    <c:if test="${star.references!=null}">
+        <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="references">
+            <div class="w-100">
+                <h2 class="mb-5">References</h2>
+                <c:forEach items="${star.references}" var="reference">
+                    <p class="text-primary mb-0 mt-2">${reference.name}</p>
+                    <p class="mb-0">${reference.title} · ${reference.organization}</p>
+                    <c:if test="${reference.phone != null }"><p class="mb-0">${reference.phone} </p></c:if>
+                    <c:if test="${reference.email != null}"><a href="mailto:${reference.email}"
+                                                               target="_blank">${reference.email}</a></c:if>
+                </c:forEach>
+            </div>
+        </section>
+        <hr class="m-0">
+    </c:if>
+    <%--    references ends--%>
+
+    <%--Other info starts--%>
+    <c:if test="${star.otherInfos!=null}">
+        <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="others">
+            <div class="w-100">
+                <h2 class="mb-5">Other Information</h2>
+                <c:forEach items="${star.otherInfos}" var="other">
+                    <p><i class="fas fa-circle-notch text-primary"></i>
+                            ${other}</p>
+                </c:forEach>
+            </div>
+        </section>
+        <hr class="m-0">
+    </c:if>
+    <%--    other info ends--%>
 
 
 </div>

@@ -60,7 +60,7 @@ public class TestPersonToJsonServlet extends HttpServlet {
         testStar.setSkillStack(skillStack);
 
         DesignPreference dp = new DesignPreference();
-        dp.setThemeColor("#2f8cde");
+        dp.setThemeColor("#71c45a");
         testStar.setDesignPreference(dp);
 
         testStar.setPersonalLinks(personalLinks);

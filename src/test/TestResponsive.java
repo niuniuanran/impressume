@@ -20,7 +20,7 @@ public class TestResponsive extends HttpServlet {
         ResumeStar testStar = new ResumeStar(1, "Anran", "Niu");
 
         DesignPreference dp = new DesignPreference();
-        dp.setThemeColor("#fcba03");
+        dp.setThemeColor("#03A1FC");
         testStar.setDesignPreference(dp);
         testStar.setBriefIntro("Your up and coming full-stack developer!");
 

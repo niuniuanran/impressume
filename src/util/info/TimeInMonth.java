@@ -47,6 +47,7 @@ public class TimeInMonth {
     @Override
     public String toString() {
         if (present) return "Present";
+        if (month < 0) return "" + year;
         else return MONTHS[month] + " " + year;
     }
 }
