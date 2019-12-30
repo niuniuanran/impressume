@@ -2,7 +2,6 @@
 /Users/anran/Desktop/impressume/src/main/java/util/info/SkillGroup.java
 /Users/anran/Desktop/impressume/src/main/java/util/info/PersonalLinks.java
 /Users/anran/Desktop/impressume/src/main/java/util/AddProtocol.java
-/Users/anran/Desktop/impressume/src/main/java/test/Yatian_Wang.java
 /Users/anran/Desktop/impressume/src/main/java/util/JSONResponse.java
 /Users/anran/Desktop/impressume/src/main/java/util/info/ContactDetail.java
 /Users/anran/Desktop/impressume/src/main/java/util/info/Project.java
@@ -15,6 +14,7 @@
 /Users/anran/Desktop/impressume/src/main/java/util/info/WorkExperience.java
 /Users/anran/Desktop/impressume/src/main/java/test/TestPersonToJsonServlet.java
 /Users/anran/Desktop/impressume/src/main/java/responsive/ResponsiveResumeServlet.java
+/Users/anran/Desktop/impressume/src/main/java/responsive/Yatian_Wang.java
 /Users/anran/Desktop/impressume/src/main/java/test/TestJsonToResponsive.java
 /Users/anran/Desktop/impressume/src/main/java/util/info/TimeInMonth.java
 /Users/anran/Desktop/impressume/src/main/java/util/info/Reference.java
