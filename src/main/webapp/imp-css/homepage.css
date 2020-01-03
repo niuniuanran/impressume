@@ -87,12 +87,14 @@
 #temp-container{
     position: absolute;
     margin: 50px auto;
-    left: 50px;
-    top:50px;
+    left: 250px;
+    top:70px;
     width: 600px;
+    height: 1000px;
     font-size: 150%;
     color: var(--customized-heavy-color);
     text-align: justify;
+    background:rgba(255,255,255,0.8);
 }
 .temp-info{
     color:var(--customized-heavy-color);
