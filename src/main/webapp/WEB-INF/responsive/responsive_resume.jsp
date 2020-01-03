@@ -16,31 +16,26 @@
 
     <title>${star.name}</title>
     <!-- Bootstrap core CSS -->
-    <link href='<c:url value="/node_modules/startbootstrap-resume/vendor/bootstrap/css/bootstrap.min.css"/>' rel="stylesheet">
+    <link href='<c:url value="/node_modules/startbootstrap-resume/vendor/bootstrap/css/bootstrap.min.css"/>'
+          rel="stylesheet">
     <link href='<c:url value="/node_modules/startbootstrap-resume/css/resume.min.css"/>' rel="stylesheet">
-
- <link href='<c:url value="/node_modules/startbootstrap-resume/vendor/fontawesome-free/css/all.min.css"/>' rel="stylesheet">
-
+    <%--    font awesome--%>
+    <link href='<c:url value="/node_modules/startbootstrap-resume/vendor/fontawesome-free/css/all.min.css"/>'
+          rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+    <link href="<c:url value="/imp-css/custom-styling.css"/> " rel="stylesheet">
 
-    <c:if test="${star.designPreference!=null}">
-
-        <link href="<c:url value="/imp-styling/imp-styling.css"/> " rel="stylesheet">
-
-        <script>
-            document.documentElement.style
-                .setProperty('--customized-theme-color', `${star.designPreference.themeColor}`);
-            document.documentElement.style
-                .setProperty('--customized-light-color', `${star.designPreference.lightColor}`);
-            document.documentElement.style
-                .setProperty('--customized-heavy-color', `${star.designPreference.heavyColor}`);
-        </script>
-
-
-    </c:if>
+    <script>
+        document.documentElement.style
+            .setProperty('--customized-theme-color', `${star.designPreference.themeColor}`);
+        document.documentElement.style
+            .setProperty('--customized-light-color', `${star.designPreference.lightColor}`);
+        document.documentElement.style
+            .setProperty('--customized-heavy-color', `${star.designPreference.heavyColor}`);
+    </script>
 
 
 </head>
@@ -210,9 +205,9 @@
                 <c:forEach var="experience" items="${star.workExperiences}">
 
                     <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+
                         <div class="resume-content">
                             <h3 class="mb-0">${experience.title}</h3>
-
                             <c:choose>
                                 <c:when test="${experience.organizationLink==null}">
                                     <div class="subheading mb-3">${experience.organizationName}</div>
@@ -224,6 +219,7 @@
                                 </c:otherwise>
                             </c:choose>
 
+
                             <c:forEach var="description" items="${experience.descriptions}">
                                 <li>
                                         ${description}
@@ -231,12 +227,19 @@
                             </c:forEach>
 
                         </div>
-                        <div class="resume-date text-md-right">
-                            <c:if test="${experience.place != null}">
-                                <p class="text-primary">${experience.place}</p>
-                            </c:if>
-                            <p class="text-primary">${experience.from} - ${experience.to}</p>
+
+                        <div class="resume-date text-md-right ">
+                            <c:choose>
+                                <c:when test="${experience.place != null}">
+                                    <p class="text-primary mt-3 mb-0">${experience.place}</p>
+                                    <p class="text-primary mt-0">${experience.from} - ${experience.to}</p>
+                                </c:when>
+                                <c:otherwise>
+                                    <p class="text-primary mt-3">${experience.from} - ${experience.to}</p>
+                                </c:otherwise>
+                            </c:choose>
                         </div>
+
                     </div>
 
                 </c:forEach>
@@ -265,7 +268,7 @@
                             </c:if>
                         </div>
                         <div class="resume-date text-md-right">
-                            <span class="text-primary">${education.from} - ${education.to}</span>
+                            <span class="text-primary mt-4">${education.from} - ${education.to}</span>
                         </div>
                     </div>
                 </c:forEach>
@@ -489,11 +492,16 @@
                             </c:forEach>
 
                         </div>
-                        <div class="resume-date text-md-right">
-                            <c:if test="${experience.place != null}">
-                                <p class="text-primary">${experience.place}</p>
-                            </c:if>
-                            <p class="text-primary">${experience.from} - ${experience.to}</p>
+                        <div class="resume-date text-md-right ">
+                            <c:choose>
+                                <c:when test="${experience.place != null}">
+                                    <p class="text-primary mt-3 mb-0">${experience.place}</p>
+                                    <p class="text-primary mt-0">${experience.from} - ${experience.to}</p>
+                                </c:when>
+                                <c:otherwise>
+                                    <p class="text-primary mt-3">${experience.from} - ${experience.to}</p>
+                                </c:otherwise>
+                            </c:choose>
                         </div>
                     </div>
 
