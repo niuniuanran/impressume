@@ -1,6 +1,14 @@
 <component name="libraryTable">
   <library name="jackson-annotations-2.10.1">
-    <CLASSES />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jackson-annotations-2.10.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jackson-core-2.10.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jackson-databind-2.10.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jstl-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/log4j-1.2-api-2.13.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/log4j-api-2.13.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/log4j-core-2.13.0.jar!/" />
+    </CLASSES>
     <JAVADOC />
     <SOURCES />
   </library>
