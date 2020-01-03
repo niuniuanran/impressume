@@ -1,0 +1,24 @@
+{
+  "name": "impressume",
+  "version": "1.0.0",
+  "description": "make your responsive cv with impressume",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niuniuanran/impressume.git"
+  },
+  "keywords": [
+    "resume",
+    "cv"
+  ],
+  "author": "anran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/niuniuanran/impressume/issues"
+  },
+  "homepage": "https://github.com/niuniuanran/impressume#readme",
+  "dependencies": {}
+}
