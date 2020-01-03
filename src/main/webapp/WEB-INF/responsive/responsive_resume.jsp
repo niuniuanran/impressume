@@ -37,7 +37,6 @@
             .setProperty('--customized-heavy-color', `${star.designPreference.heavyColor}`);
     </script>
 
-
 </head>
 
 <body id="page-top">

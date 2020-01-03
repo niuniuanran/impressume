@@ -32,15 +32,15 @@
 
                 <div class="function-box light-bg white-bg-transition">
                     <div class="function" id="pick-theme-color">
-                        <p>Welcome!</p>
-                        <p>We will be making your responsive CV together. </p>
-                        <p>Here you'll see an <a href="/anran-niu">example</a> of what your CV will be like. </p>
+                        <p><strong>Welcome!</strong></p>
+                        <p>We will be making your <strong>responsive CV</strong> together. </p>
+                        <p>Have a look at an <a href='<c:url value="/anran_niu"/>' target="_blank">example</a> of what your CV will be like. </p>
                         <form id="pick-color-form" action="/make-cv" method="get">
-                        <label for="colorPicker"> Let's start by picking your theme color. </label>
+                        <label for="colorPicker"> Let's start by picking your theme color: </label>
                         <br>
                         <input type="color" value="#8F96AE" id="colorPicker"><br>
                         <label for="confirmColor"> Happy with the color theme you see? </label><br>
-                        <button id="confirmColor" type="submit">Let's begin!</button>
+                        <button id="confirmColor" class="next-step-button" type="submit">Let's begin!</button>
                         </form>
                     </div>
                 </div>

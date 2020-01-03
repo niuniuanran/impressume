@@ -29,7 +29,6 @@ public class DesignPreference {
             int c = Integer.parseInt(themeColor.substring(1+i*2,3+i*2), 16);
         }
 
-
     }
     private String twoDigit(String c){
         if (c.length() == 2) return c;
