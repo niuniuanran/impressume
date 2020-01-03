@@ -21,8 +21,6 @@ public class TestJsonToResponsive extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println(Thread.currentThread().getContextClassLoader());
 
-//        try (InputStreamReader inputStreamReader = new InputStreamReader(Objects.requireNonNull(Thread.currentThread().getContextClassLoader().getResourceAsStream("star_jsons/star-1.JSON")))) {
-
         try (InputStreamReader inputStreamReader = new InputStreamReader(getServletContext().getResourceAsStream("/WEB-INF/star_jsons/yatian-wang.JSON"))){
             ObjectMapper objectMapper = new ObjectMapper();
             ResumeStar star = objectMapper.readValue(inputStreamReader, ResumeStar.class);
