@@ -49,7 +49,7 @@
 
 #main-rect{
     width: 800px;
-    min-height: 1000px;
+    min-height: 600px;
     right: 0;
     top: 50px;
 }
@@ -128,3 +128,43 @@
     height: fit-content;
     margin: auto;
 }
+#welcome1{
+    font-size: 200%;
+    line-height: 200%;
+    animation-delay: 1s;
+    animation-name: show-welcome;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes show-welcome {
+    from {}
+    to {
+        font-size: 150%;
+        line-height: 50%;
+    }
+}
+#welcome2 {
+    font-size: 80%;
+    font-weight: lighter;
+
+}
+
+.next-step-button {
+    font-family: 'Saira Extra Condensed',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+    font-size: 100%;
+    background-color: var(--customized-theme-color);
+    border: none;
+    color: white;
+    transition-duration: 0.5s;
+}
+
+.next-step-button:hover {
+    font-size: 150%;
+    background-color: white;
+    color: var(--customized-theme-color);
+    border: 3px solid var(--customized-theme-color);
+}
+
+
+

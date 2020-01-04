@@ -7,8 +7,8 @@
 <head>
     <title> imp: Resume to Impress </title>
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
-    <link href="imp-css/custom-styling.css" rel="stylesheet" type="text/css">
-    <link href="imp-css/homepage.css" rel="stylesheet">
+    <link href='<c:url value="/imp-css/custom-styling.css"/>' rel="stylesheet" type="text/css">
+    <link href='<c:url value="/imp-css/make-cv.css"/>' rel="stylesheet">
     <script src="index.js"></script>
 </head>
 <body>
@@ -32,23 +32,23 @@
 
                 <div class="function-box light-bg white-bg-transition">
                     <div class="function" id="pick-theme-color">
-                        <p><strong>Welcome!</strong></p>
-                        <p>We will be making your <strong>responsive CV</strong> together. </p>
-                        <p>Have a look at an <a href='<c:url value="/anran_niu"/>' target="_blank">example</a> of what your CV will be like. </p>
-                        <form id="pick-color-form" action="/make-cv" method="get">
-                        <label for="colorPicker"> Let's start by picking your theme color: </label>
-                        <br>
-                        <input type="color" value="#8F96AE" id="colorPicker"><br>
-                        <label for="confirmColor"> Happy with the color theme you see? </label><br>
-                        <button id="confirmColor" class="next-step-button" type="submit">Let's begin!</button>
+                        <div id="welcome1">
+                            <p><strong>Welcome!</strong></p>
+                            <p>We will be making your <strong>responsive CV</strong> together. </p>
+                        </div>
+                        <div id="welcome2">
+                            <p> (Click <a href='<c:url value="/anran_niu"/>' target="_blank">here</a> for a basic example of what
+                            your CV will look like) </p>
+                        </div>
+                        <div id="welcome3">
+                        <form id="pick-color-form" action='<c:url value="/make_cv"/>' method="get">
+                            <label for="colorPicker"> Now, pick a theme color by clicking the box below: </label>
+                            <br>
+                            <input type="color" value="#8F96AE" id="colorPicker" name="themeColor"><hr>
+                            <label for="confirmColor"> When you feel pleased with your color <br>(and your eyes are comfortable reading in it), </label><br>
+                            <button id="confirmColor" class="next-step-button" type="submit">Hit to begin!</button>
                         </form>
-                    </div>
-                </div>
-
-                <div class="function-box white-bg">
-                    <div class="function" id="enter-basic-info">
-
-
+                        </div>
                     </div>
                 </div>
 
