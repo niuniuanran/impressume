@@ -137,6 +137,10 @@
     animation-fill-mode: forwards;
 }
 
+#guide1 {
+    animation-delay: 0s;
+}
+
 @keyframes show-welcome {
     from {}
     to {
@@ -172,6 +176,11 @@
 
 .non-display{
     display: none;
+}
+
+.not-important-note {
+    font-size: small;
+    font-weight: lighter;
 }
 
 

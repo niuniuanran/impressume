@@ -52,8 +52,9 @@
 
                     <div class="function non-display" id="about-you">
                         <div id="guide1">
-                            <p>Let's start from getting to know you.</p>
+                            <p>Let's start by getting to know you.</p>
                         </div>
+                        <p class="not-important-note">If you change your mind about your color, just click <a href='<c:url value="/"/>'>here</a> to start over </p>
                         <form action='<c:url value="/make_cv"/>'>
                             <label for="first-name">Your first name is: </label>
                             <input type="text" id="first-name" name="firstName" required>
