@@ -1,4 +1,4 @@
-package util.info;
+package util.star;
 
 import util.AddProtocol;
 

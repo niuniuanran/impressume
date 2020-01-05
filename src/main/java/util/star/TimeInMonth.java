@@ -1,4 +1,4 @@
-package util.info;
+package util.star;
 
 public class TimeInMonth {
     public static final String[] MONTHS = new String[]{"January", "February", "March", "April",

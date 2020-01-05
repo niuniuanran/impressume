@@ -128,7 +128,7 @@
     height: fit-content;
     margin: auto;
 }
-#welcome1{
+#welcome1, #guide1{
     font-size: 200%;
     line-height: 200%;
     animation-delay: 1s;
@@ -164,6 +164,14 @@
     background-color: white;
     color: var(--customized-theme-color);
     border: 3px solid var(--customized-theme-color);
+}
+
+#about-you-container{
+    border: 2px solid var(--customized-theme-color);
+}
+
+.non-display{
+    display: none;
 }
 
 

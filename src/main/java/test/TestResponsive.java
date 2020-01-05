@@ -1,7 +1,6 @@
 package test;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import util.info.*;
+import util.star.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,7 +16,7 @@ public class TestResponsive extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        ResumeStar testStar = new ResumeStar(1, "Anran", "Niu");
+        ResumeStar testStar = new ResumeStar("Anran", "Niu");
 
         DesignPreference dp = new DesignPreference();
         dp.setThemeColor("#03A1FC");

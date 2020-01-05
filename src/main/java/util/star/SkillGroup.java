@@ -1,4 +1,4 @@
-package util.info;
+package util.star;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,9 +1,10 @@
-package util.info;
+package util.star;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ResumeStar {
+    static private int next_id = 0;
     private int id;
     private String name;
     private String firstName;
@@ -32,10 +33,11 @@ public class ResumeStar {
 
 
     public ResumeStar() {
+        id = next_id++;
     }
 
-    public ResumeStar(int id, String firstName, String lastName) {
-        this.id = id;
+    public ResumeStar(String firstName, String lastName) {
+        id = next_id++;
         this.firstName = firstName;
         this.lastName = lastName;
         this.name = this.firstName + " " + this.lastName;

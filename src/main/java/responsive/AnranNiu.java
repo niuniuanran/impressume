@@ -1,7 +1,7 @@
 package responsive;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import util.info.ResumeStar;
+import util.star.ResumeStar;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
     <link href='<c:url value="/imp-css/custom-styling.css"/>' rel="stylesheet" type="text/css">
     <link href='<c:url value="/imp-css/make-cv.css"/>' rel="stylesheet">
+    <script src='<c:url value="/js/style.js"/>'></script>
     <script src="index.js"></script>
 </head>
 <body>
@@ -30,7 +31,7 @@
 
             <div id="functions" class="abs-position">
 
-                <div class="function-box light-bg white-bg-transition">
+                <div class="function-box light-bg white-bg-transition" id="welcome-box">
                     <div class="function" id="pick-theme-color">
                         <div id="welcome1">
                             <p><strong>Welcome!</strong></p>
@@ -41,14 +42,29 @@
                             your CV will look like) </p>
                         </div>
                         <div id="welcome3">
-                        <form id="pick-color-form" action='<c:url value="/make_cv"/>' method="get">
                             <label for="colorPicker"> Now, pick a theme color by clicking the box below: </label>
                             <br>
                             <input type="color" value="#8F96AE" id="colorPicker" name="themeColor"><hr>
                             <label for="confirmColor"> When you feel pleased with your color <br>(and your eyes are comfortable reading in it), </label><br>
-                            <button id="confirmColor" class="next-step-button" type="submit">Hit to begin!</button>
-                        </form>
+                            <button id="confirmColor" class="next-step-button">Hit to begin!</button>
                         </div>
+                    </div>
+
+                    <div class="function non-display" id="about-you">
+                        <div id="guide1">
+                            <p>Let's start from getting to know you.</p>
+                        </div>
+                        <form action='<c:url value="/make_cv"/>'>
+                            <label for="first-name">Your first name is: </label>
+                            <input type="text" id="first-name" name="firstName" required>
+                            <br>
+                            <label for="last-name"> Your last name is: </label>
+                            <input type="text" id="last-name" name="lastName" required>
+                            <br>
+
+
+
+                        </form>
                     </div>
                 </div>
 
