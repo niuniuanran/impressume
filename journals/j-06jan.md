@@ -13,3 +13,14 @@ updated information.
 
 So if I save the current stage in the request
 by letting the user select where she is - option?
+
+
+<strong>
+Now I've had ideas for how to set up the CV making!
+The index.jsp will prompt the user to choose a color,
+and then enter most basic information, including their name, and their profile image, so that the skeleton will be set up.
+
+The make-cv guide will be a big form, with the same style and setup as the responsive cv. 
+Sounds pretty nice!
+
+</strong>
