@@ -58,7 +58,7 @@
 
                         <div class="function non-display" id="about-you">
                             <div id="guide1">
-                                <p>Now let's talk about you!</p>
+                                <p>Now let's talk about you</p>
                             </div>
                             <label for="first-name">Your first name is: </label>
                             <input type="text" id="first-name" name="firstName" required>
