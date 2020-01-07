@@ -42,7 +42,7 @@ public class UploadPhoto extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ResumeStar star = (ResumeStar) req.getSession().getAttribute("star");
         System.out.println(star.getName());
-        String targetFileName = star.getFirstName() + star.getId() + "";
+        String targetFileName = star.getFirstName() + "_" + star.getLastName() + star.getId() + "";
 
         DiskFileItemFactory factory = new DiskFileItemFactory();
         factory.setSizeThreshold(4 * 1024);
