@@ -125,73 +125,74 @@
 
 <div class="container-fluid p-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
-        <div class="w-100">
-            <h1 class="mb-0">${star.firstName}
-                <span class="text-primary">${star.lastName}</span>
-            </h1>
-            <div class="subheading mb-5">${star.contactDetail.address} · ${star.contactDetail.phone} ·
-                <a href="mailto:${star.contactDetail.email}" target="_blank">${star.contactDetail.email}</a>
-            </div>
-            <p class="lead mb-5">${star.briefIntro}</p>
+<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+<div class="w-100">
+    <h1 class="mb-0">${star.firstName}
+        <span class="text-primary">${star.lastName}</span>
+    </h1>
+    <div class="subheading mb-5">${star.contactDetail.address}
+        <c:if test="${star.contactDetail.phone!=null}">· ${star.contactDetail.phone} </c:if>
+        <c:if test="${star.contactDetail.email!=null}">·<a href="mailto:${star.contactDetail.email}" target="_blank">${star.contactDetail.email}</a></c:if>
+    </div>
+    <p class="lead mb-5">${star.briefIntro}</p>
 
-            <div class="social-icons">
-                <c:if test="${star.personalLinks.linkedInURL != null}">
-                    <a href="${star.personalLinks.linkedInURL}" target="_blank">
-                        <i class="fab fa-linkedin-in" style="line-height: 3.5rem;"></i>
-                            <%--
-                            The style of line-height is added here
-                            because css style casting order in html and in jsp is different.
-                            In blackrockdigital's original html, the style of the font-awesome class for .fab is overwritten by line-height specified for .social-icon a
-                            in resume.min.css, while in the jsp the font-awesome class for .fab overwrites rules for <a>.
-                            This is why an inline rule is added here to avoid trouble.
-                            --%>
-                    </a>
-                </c:if>
+    <div class="social-icons">
+    <c:if test="${star.personalLinks.linkedInURL != null}">
+        <a href="${star.personalLinks.linkedInURL}" target="_blank">
+            <i class="fab fa-linkedin-in" style="line-height: 3.5rem;"></i>
+                <%--
+                The style of line-height is added here
+                because css style casting order in html and in jsp is different.
+                In blackrockdigital's original html, the style of the font-awesome class for .fab is overwritten by line-height specified for .social-icon a
+                in resume.min.css, while in the jsp the font-awesome class for .fab overwrites rules for <a>.
+                This is why an inline rule is added here to avoid trouble.
+                --%>
+        </a>
+    </c:if>
 
-                <c:if test="${star.personalLinks.gitHubURL != null}">
-                    <a href="${star.personalLinks.gitHubURL}" target="_blank">
-                        <i class="fab fa-github" style="line-height: 3.5rem;"></i>
-                    </a>
-                </c:if>
+    <c:if test="${star.personalLinks.gitHubURL != null}">
+        <a href="${star.personalLinks.gitHubURL}" target="_blank">
+            <i class="fab fa-github" style="line-height: 3.5rem;"></i>
+        </a>
+    </c:if>
 
-                <c:if test="${star.personalLinks.gitLabURL != null}">
-                    <a href="${star.personalLinks.gitLabURL}" target="_blank">
-                        <i class="fab fa-gitlab" style="line-height: 3.5rem;"></i>
-                    </a>
-                </c:if>
+    <c:if test="${star.personalLinks.gitLabURL != null}">
+        <a href="${star.personalLinks.gitLabURL}" target="_blank">
+            <i class="fab fa-gitlab" style="line-height: 3.5rem;"></i>
+        </a>
+    </c:if>
 
-                <c:if test="${star.personalLinks.researchGateURL != null}">
-                    <a href="${star.personalLinks.researchGateURL}" target="_blank">
-                        <i class="fab fa-researchgate" style="line-height: 3.5rem;"></i>
-                    </a>
-                </c:if>
+    <c:if test="${star.personalLinks.researchGateURL != null}">
+        <a href="${star.personalLinks.researchGateURL}" target="_blank">
+            <i class="fab fa-researchgate" style="line-height: 3.5rem;"></i>
+        </a>
+    </c:if>
 
-                <c:if test="${star.personalLinks.wordPressURL != null}">
-                    <a href="${star.personalLinks.wordPressURL}" target="_blank">
-                        <i class="fab fa-wordpress" style="line-height: 3.5rem;"></i>
-                    </a>
-                </c:if>
+    <c:if test="${star.personalLinks.wordPressURL != null}">
+        <a href="${star.personalLinks.wordPressURL}" target="_blank">
+            <i class="fab fa-wordpress" style="line-height: 3.5rem;"></i>
+        </a>
+    </c:if>
 
-                <c:if test="${star.personalLinks.quoraURL != null}">
-                    <a href="${star.personalLinks.quoraURL}" target="_blank">
-                        <i class="fab fa-quora" style="line-height: 3.5rem;"></i>
-                    </a>
-                </c:if>
+    <c:if test="${star.personalLinks.quoraURL != null}">
+        <a href="${star.personalLinks.quoraURL}" target="_blank">
+            <i class="fab fa-quora" style="line-height: 3.5rem;"></i>
+        </a>
+    </c:if>
 
-                <c:if test="${star.personalLinks.twitterURL != null}">
-                    <a href="${star.personalLinks.twitterURL}" target="_blank">
-                        <i class="fab fa-twitter" style="line-height: 3.5rem;"></i>
-                    </a>
-                </c:if>
+    <c:if test="${star.personalLinks.twitterURL != null}">
+        <a href="${star.personalLinks.twitterURL}" target="_blank">
+            <i class="fab fa-twitter" style="line-height: 3.5rem;"></i>
+        </a>
+    </c:if>
 
-                <c:if test="${star.personalLinks.facebookURL != null}">
-                    <a href="${star.personalLinks.facebookURL}" target="_blank">
-                        <i class="fab fa-facebook-f" style="line-height: 3.5rem;"></i>
-                    </a>
-                </c:if>
-            </div>
-        </div>
+    <c:if test="${star.personalLinks.facebookURL != null}">
+        <a href="${star.personalLinks.facebookURL}" target="_blank">
+            <i class="fab fa-facebook-f" style="line-height: 3.5rem;"></i>
+        </a>
+    </c:if>
+    </div>
+    </div>
     </section>
     <hr class="m-0">
 
@@ -605,20 +606,20 @@
     <%--    other info ends--%>
 
 
-</div>
+    </div>
 
-<!-- Bootstrap core JavaScript -->
-<script src='<c:url value="/node_modules/startbootstrap-resume/vendor/jquery/jquery.min.js"/>'></script>
-
-
-<!-- Plugin JavaScript -->
-<script src='<c:url value="/node_modules/startbootstrap-resume/vendor/bootstrap/js/bootstrap.bundle.min.js"/>'></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src='<c:url value="/node_modules/startbootstrap-resume/vendor/jquery/jquery.min.js"/>'></script>
 
 
-<script src='<c:url value="/node_modules/startbootstrap-resume/vendor/jquery-easing/jquery.easing.min.js"/>'></script>
+    <!-- Plugin JavaScript -->
+    <script src='<c:url value="/node_modules/startbootstrap-resume/vendor/bootstrap/js/bootstrap.bundle.min.js"/>'></script>
 
-<!-- Custom scripts for this template -->
-<script src='<c:url value="/node_modules/startbootstrap-resume/js/resume.min.js"/>'></script>
 
-</body>
-</html>
+    <script src='<c:url value="/node_modules/startbootstrap-resume/vendor/jquery-easing/jquery.easing.min.js"/>'></script>
+
+    <!-- Custom scripts for this template -->
+    <script src='<c:url value="/node_modules/startbootstrap-resume/js/resume.min.js"/>'></script>
+
+    </body>
+    </html>

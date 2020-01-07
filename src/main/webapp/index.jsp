@@ -46,7 +46,8 @@
                             </div>
 
                             <div id="welcome3">
-                                <label for="colorPicker"> To start, pick a theme color by clicking the box below: </label>
+                                <label for="colorPicker"> To start, pick a theme color by clicking the box
+                                    below: </label>
                                 <br>
                                 <input type="color" value="#8F96AE" id="colorPicker" name="themeColor">
                                 <hr>
@@ -69,6 +70,8 @@
                             <%--                            <input type="file" id="profile-photo-upload" name="profile-photo" accept="image/png, image/jpeg" onchange="uploadPhoto(this, '/make_cv')"/>--%>
                             <%--                            <p class="not-important-note"> I would recommend having a photo for your responsive CV, but don't worry if you--%>
                             <%--                                don't - we'll figure out something else. </p>--%>
+
+                            <label for="address"> You are from: </label><input type="text" id="address" name="city" placeholder="city">, <input type="text" id="address" name="country" placeholder="country"><br>
                             <input type="submit" value="Continue!" class="next-step-button">
                     </form>
                 </div>

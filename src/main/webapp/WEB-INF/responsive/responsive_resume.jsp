@@ -130,8 +130,9 @@
             <h1 class="mb-0">${star.firstName}
                 <span class="text-primary">${star.lastName}</span>
             </h1>
-            <div class="subheading mb-5">${star.contactDetail.address} · ${star.contactDetail.phone} ·
-                <a href="mailto:${star.contactDetail.email}" target="_blank">${star.contactDetail.email}</a>
+            <div class="subheading mb-5">${star.contactDetail.address}
+                <c:if test="${star.contactDetail.phone!=null}">· ${star.contactDetail.phone} </c:if>
+                <c:if test="${star.contactDetail.email!=null}">·<a href="mailto:${star.contactDetail.email}" target="_blank">${star.contactDetail.email}</a></c:if>
             </div>
             <p class="lead mb-5">${star.briefIntro}</p>
 

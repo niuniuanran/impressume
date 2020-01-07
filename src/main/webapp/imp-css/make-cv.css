@@ -190,5 +190,13 @@
 
 }
 
+input[type="text"]{
+    font-size: medium;
+    font-family: inherit;
+    color: inherit;
+    font-weight: lighter;
+    margin: 3px;
+}
+
 
 

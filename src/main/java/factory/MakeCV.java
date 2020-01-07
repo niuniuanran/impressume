@@ -1,4 +1,5 @@
 package factory;
+import util.star.ContactDetail;
 import util.star.DesignPreference;
 import util.star.ResumeStar;
 
@@ -16,8 +17,12 @@ public class MakeCV extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         ResumeStar star = new ResumeStar(req.getParameter("firstName"), req.getParameter("lastName"));
+        star.setContactDetail(new ContactDetail(req.getParameter("city") + ", " + req.getParameter("country"), null, null));
+
 
         star.setDesignPreference(new DesignPreference(req.getParameter("themeColor")));
+
+
         req.setAttribute("star", star);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/make_cv/make_cv.jsp");
