@@ -260,7 +260,7 @@
                             <h3 class="mb-0">${education.institute}</h3>
                             <div class="subheading mb-3">${education.name}</div>
                             <c:if test="${education.specification != null}">
-                                <div>C${education.specification}</div>
+                                <div>${education.specification}</div>
                             </c:if>
                             <c:if test="${education.GPA != null}">
                                 <p>GPA: ${education.GPA} / ${education.fullGPA}</p>

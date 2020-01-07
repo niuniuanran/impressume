@@ -10,8 +10,8 @@ window.onload = function () {
         doCustomizedColor(themeColor);
     });
     confirmColorButton.addEventListener("click", function (event) {
-        pickColorDiv.classList.add("non-display");
         aboutYouDiv.classList.remove("non-display");
+        confirmColorButton.classList.add("non-display");
 
     });
 

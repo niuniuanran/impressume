@@ -154,13 +154,17 @@
 
 }
 
-.next-step-button {
+.next-step-button{
     font-family: 'Saira Extra Condensed',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
     font-size: 100%;
     background-color: var(--customized-theme-color);
     border: none;
     color: white;
     transition-duration: 0.5s;
+}
+.static-button{
+    color: var(--customized-theme-color);
+    font-family: 'Saira Extra Condensed',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
 }
 
 .next-step-button:hover {
@@ -179,8 +183,11 @@
 }
 
 .not-important-note {
-    font-size: small;
+    font-size: 70%;
+    line-height: 50%;
     font-weight: lighter;
+    color: var(--customized-light-color);
+
 }
 
 

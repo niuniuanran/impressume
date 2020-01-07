@@ -14,7 +14,7 @@
     <meta name="description" content="CV maker">
     <meta name="author" content="Anran Niu - aniu423@aucklanduni.ac.nz">
 
-    <title>imp - Make it!</title>
+    <title>imp: ${star.firstName}'s CV on the way!</title>
     <!-- Bootstrap core CSS -->
     <link href='<c:url value="/node_modules/startbootstrap-resume/vendor/bootstrap/css/bootstrap.min.css"/>'
           rel="stylesheet">
@@ -30,7 +30,7 @@
 
     <script>
         document.documentElement.style
-            .setProperty('--customized-theme-color', `${themeColor}`);
+            .setProperty('--customized-theme-color', `${star.designPreference.themeColor}`);
         document.documentElement.style
             .setProperty('--customized-light-color', `${star.designPreference.lightColor}`);
         document.documentElement.style

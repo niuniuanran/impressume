@@ -16,7 +16,8 @@ public class MakeCV extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         ResumeStar star = new ResumeStar(req.getParameter("firstName"), req.getParameter("lastName"));
-        star.setDesignPreference(new DesignPreference(req.getSession().getAttribute("themeColor").toString()));
+
+        star.setDesignPreference(new DesignPreference(req.getParameter("themeColor")));
         req.setAttribute("star", star);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/make_cv/make_cv.jsp");
