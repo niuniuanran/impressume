@@ -1,0 +1,11 @@
+#make-cv-guide {
+    background-color: var(--customized-light-color);
+
+    position: fixed;
+    top: 100px;
+    left: 400px;
+    z-index: 3;
+    width: 200px;
+    height: 200px;
+
+}

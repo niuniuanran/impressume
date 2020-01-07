@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "make-cv", urlPatterns = {"/make_cv"})
@@ -23,7 +24,8 @@ public class MakeCV extends HttpServlet {
         star.setDesignPreference(new DesignPreference(req.getParameter("themeColor")));
 
 
-        req.setAttribute("star", star);
+        HttpSession session = req.getSession();
+        session.setAttribute("star", star);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/make_cv/make_cv.jsp");
         dispatcher.forward(req, resp);

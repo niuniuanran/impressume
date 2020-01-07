@@ -71,7 +71,7 @@
                             <%--                            <p class="not-important-note"> I would recommend having a photo for your responsive CV, but don't worry if you--%>
                             <%--                                don't - we'll figure out something else. </p>--%>
 
-                            <label for="address"> You are from: </label><input type="text" id="address" name="city" placeholder="city">, <input type="text" id="address" name="country" placeholder="country"><br>
+                            <label for="address"> You are from: </label><input type="text" id="address" name="city" placeholder="city" required>, <input type="text" id="address" name="country" placeholder="country" required><br>
                             <input type="submit" value="Continue!" class="next-step-button">
                     </form>
                 </div>
