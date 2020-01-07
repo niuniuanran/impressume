@@ -12,6 +12,7 @@ window.onload = function () {
     confirmColorButton.addEventListener("click", function (event) {
         aboutYouDiv.classList.remove("non-display");
         confirmColorButton.classList.add("non-display");
+        window.scrollTo(0,document.body.scrollHeight);
 
     });
 

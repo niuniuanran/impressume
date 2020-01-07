@@ -161,6 +161,7 @@
     border: none;
     color: white;
     transition-duration: 0.5s;
+    margin: 5px;
 }
 .static-button{
     color: var(--customized-theme-color);
@@ -195,8 +196,10 @@ input[type="text"]{
     font-family: inherit;
     color: inherit;
     font-weight: lighter;
-    margin: 3px;
+    margin: 5px;
 }
+
+
 
 
 
