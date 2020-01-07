@@ -10,3 +10,8 @@ https://stackoverflow.com/questions/26603256/client-side-image-manipulation-crop
 https://stackoverflow.com/questions/2434458/image-resizing-client-side-with-javascript-before-upload-to-the-server
 
 https://gist.github.com/dcollien/312bce1270a5f511bf4a
+
+
+Maven tutorial:
+https://www.tutorialspoint.com/maven/index.htm
+https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
