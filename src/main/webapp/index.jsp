@@ -11,7 +11,6 @@
     <link href='<c:url value="/imp-css/make-cv.css"/>' rel="stylesheet">
     <script src='<c:url value="/js/style.js"/>'></script>
     <script src="index.js"></script>
-    <script src='<c:url value="/js/image-management.js"/>'></script>
 </head>
 <body>
 <%--  <div id="tests">--%>

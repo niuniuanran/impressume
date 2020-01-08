@@ -27,7 +27,7 @@ public class MakeCV extends HttpServlet {
         HttpSession session = req.getSession();
         session.setAttribute("star", star);
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/make_cv/make_cv.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/make_cv/make_cv.jsp");
         dispatcher.forward(req, resp);
 
     }

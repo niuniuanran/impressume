@@ -58,14 +58,14 @@ public class UploadPhoto extends HttpServlet{
 //                    String fileName = fi.getName();
 //                    fullsizeImageFile = new File(uploadsFolder, fileName);
 
-                    String fileType = fi.getName().split("[.]")[1];
+                    String fileType = fi.getContentType().split("/")[1];
                     fullsizeImageFile = new File(uploadsFolder, targetFileName + "." + fileType);
                     star.setImagePath(imagesRelativePath + "/" + targetFileName + "." + fileType);
                     fi.write(fullsizeImageFile);
                 }
             }
+            resp.sendRedirect("./make_cv/make_cv.jsp");
 
-            resp.sendRedirect("./make_cv");
         } catch (Exception e) {
             throw new ServletException(e);
         }

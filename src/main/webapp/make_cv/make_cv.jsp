@@ -38,37 +38,39 @@
         document.documentElement.style
             .setProperty('--customized-heavy-color', `${star.designPreference.heavyColor}`);
     </script>
+    <script src='<c:url value="/js/cropper.js"/>'></script>
+
 
 </head>
 
 <body id="page-top">
-<div id="make-cv-guide">
-    <form id="upload-photo" action="./upload_photo" method="post" enctype='multipart/form-data'>
-        <label>Upload your profile photo here:</label><br>
-        <input type="file" id="profile-photo-upload" name="profile-photo" accept="image/png, image/jpeg"
-               onchange="uploadPhoto(this, '/make_cv')"/>
-        <button class="static-button">Submit</button>
-    </form>
-</div>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <c:choose>
+    <c:when test="${star.imagePath != null}">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">${star.name}</span>
         <span class="d-none d-lg-block">
-
-<c:choose>
-    <c:when test="${star.imagePath != null}">
-<img class="img-fluid img-profile rounded-circle mx-auto mb-2" src='<c:url value="${star.imagePath}"/>'
-     alt="${star.name}'s profile photo">
-    </c:when>
-    <c:otherwise>
-        <h3 class="mb-0">${star.firstName}!</h3>
-        <hr class="m-0">
-    </c:otherwise>
-</c:choose>
-
-</span>
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src='<c:url value="${star.imagePath}"/>'
+             alt="${star.name}'s profile photo">
+      </span>
     </a>
+        </c:when>
+
+        <c:otherwise>
+            <a class="navbar-brand js-scroll-trigger">
+        <span class="d-block d-lg-none">${star.name}</span>
+        <span class="d-none d-lg-block">
+                <form id="upload-photo" class= "make-cv-guide" action='<c:url value="/upload_photo"/>' method="post" enctype='multipart/form-data'>
+                    <label>Upload your profile photo here:</label><br>
+                    <input type="file" id="profile-photo-upload" name="profile-photo" accept="image/png, image/jpeg">
+                    <button> Submit</button>
+                </form>
+        </span>
+            </a>
+        </c:otherwise>
+    </c:choose>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
