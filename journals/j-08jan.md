@@ -17,3 +17,9 @@ Put the prompt at the right position, and make it disappear/ move on to the next
 </li>
 
 </ul>
+
+POSSIBLE IDEA:
+<li>
+Can I make a guidance-div, semi-transparent, at a fixed position on the page,
+that interacts with the user as a whole? The user will see what is going on at the page from behind the semi-transparent div.
+</li>
