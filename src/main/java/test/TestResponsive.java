@@ -76,7 +76,7 @@ public class TestResponsive extends HttpServlet {
         testStar.addProject(new Project("impressume", "https://dashboard.heroku.com/apps/impressume", "helps people make their responsive and static resume"));
 
         req.setAttribute("star", testStar);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/responsive/responsive_resume.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/responsive/responsive_resume.jsp");
         dispatcher.forward(req, resp);
 
     }

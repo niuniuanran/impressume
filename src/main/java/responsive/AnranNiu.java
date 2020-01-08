@@ -20,7 +20,7 @@ public class AnranNiu extends HttpServlet {
             ObjectMapper objectMapper = new ObjectMapper();
             ResumeStar star = objectMapper.readValue(inputStreamReader, ResumeStar.class);
             req.setAttribute("star", star);
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/responsive/responsive_resume.jsp");
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/responsive/responsive_resume.jsp");
             dispatcher.forward(req, resp);
         }
 
