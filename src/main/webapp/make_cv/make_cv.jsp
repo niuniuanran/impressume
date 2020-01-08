@@ -29,7 +29,6 @@
     <link href="<c:url value="/imp-css/custom-styling.css"/> " rel="stylesheet">
     <link href='<c:url value="/imp-css/make-cv.css"/>' rel="stylesheet">
     <link href='<c:url value="/imp-css/make-cv-guide.css"/>' rel="stylesheet">
-
     <script>
         document.documentElement.style
             .setProperty('--customized-theme-color', `${star.designPreference.themeColor}`);
@@ -38,6 +37,7 @@
         document.documentElement.style
             .setProperty('--customized-heavy-color', `${star.designPreference.heavyColor}`);
     </script>
+
     <script src='<c:url value="/js/cropper.js"/>'></script>
 
 
@@ -45,28 +45,26 @@
 
 <body id="page-top">
 
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <c:choose>
-    <c:when test="${star.imagePath != null}">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">${star.name}</span>
-        <span class="d-none d-lg-block">
+        <c:when test="${star.imagePath != null}">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">${star.name}</span>
+                <span class="d-none d-lg-block">
         <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src='<c:url value="${star.imagePath}"/>'
              alt="${star.name}'s profile photo">
       </span>
-    </a>
+            </a>
         </c:when>
-
         <c:otherwise>
-            <a class="navbar-brand js-scroll-trigger">
-        <span class="d-block d-lg-none">${star.name}</span>
-        <span class="d-none d-lg-block">
-                <form id="upload-photo" class= "make-cv-guide" action='<c:url value="/upload_photo"/>' method="post" enctype='multipart/form-data'>
-                    <label>Upload your profile photo here:</label><br>
-                    <input type="file" id="profile-photo-upload" name="profile-photo" accept="image/png, image/jpeg">
-                    <button> Submit</button>
-                </form>
-        </span>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">${star.name}</span>
+                <span class="d-none d-lg-block">
+          <h3 class="mb-0">${star.firstName}!</h3>
+                    <hr class="m-0">
+      </span>
             </a>
         </c:otherwise>
     </c:choose>
@@ -633,5 +631,15 @@
 <!-- Custom scripts for this template -->
 <script src='<c:url value="/node_modules/startbootstrap-resume/js/resume.min.js"/>'></script>
 
+<div id="upload-form-guide" class="make-cv-guide">
+    <form id="upload-photo" action='<c:url value="/upload_photo"/>' method="post"
+          enctype='multipart/form-data'>
+        <label>Upload your profile photo here:</label><br>
+        <input type="file" id="profile-photo-upload" name="profile-photo" accept="image/png, image/jpeg">
+        <button type="submit"> Submit</button>
+    </form>
+</div>
+
 </body>
+
 </html>

@@ -9,6 +9,7 @@ public class DesignPreference {
     }
     public DesignPreference(String themeColor) {
         this.themeColor = themeColor;
+        setLighterHeavier();
     }
 
 
@@ -27,6 +28,10 @@ public class DesignPreference {
         heavyColor = "#";
         for (int i = 0; i < 3; i++) {
             int c = Integer.parseInt(themeColor.substring(1+i*2,3+i*2), 16);
+            int lightC = 255 - (int)((255-c) * 0.3);
+            int heavyC = (int)(c * 0.7);
+            lightColor += twoDigit(Integer.toHexString(lightC));
+            heavyColor += twoDigit(Integer.toHexString(heavyC));
         }
 
     }
