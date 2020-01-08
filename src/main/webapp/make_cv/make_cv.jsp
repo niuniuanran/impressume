@@ -632,12 +632,18 @@
 <script src='<c:url value="/node_modules/startbootstrap-resume/js/resume.min.js"/>'></script>
 
 <div id="upload-form-guide" class="make-cv-guide">
+    <p>
+        here
+    </p>
     <form id="upload-photo" action='<c:url value="/upload_photo"/>' method="post"
           enctype='multipart/form-data'>
         <label>Upload your profile photo here:</label><br>
         <input type="file" id="profile-photo-upload" name="profile-photo" accept="image/png, image/jpeg">
+        <hr>
         <button type="submit"> Submit</button>
+        <button type="button"> I'll go without a photo </button>
     </form>
+
 </div>
 
 </body>
