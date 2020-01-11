@@ -620,20 +620,6 @@
 <div id="guide-container">
     <button class="static-button button-right-corner" onclick="minimizeContainer()">Minimize Guide</button>
 
-    <c:choose>
-        <c:when test="${currStep > 1}">
-        <script type="text/javascript">
-            window.addEventListener("load", function () {
-                guideNextStep(1, ${currStep});
-            })
-        </script>
-        </c:when>
-        <c:otherwise>
-            window.addEventListener("load", function () {
-            guideNextStep(1, 1);
-            })
-        </c:otherwise>
-    </c:choose>
 
     <div class="guide-div non-display" id="guide-1">
 
@@ -646,10 +632,12 @@
             You will create your responsive CV by following my step-by-step instructions, and you
             can see changes to your CV happening right beneath me.</p>
         <p>
-            If you want a better preview, <span onclick="minimizeContainer()" class="guide-highlight">minimize</span> me by clicking the button on my bottom.
+            If you want a better preview, <span onclick="minimizeContainer()" class="guide-highlight">minimize</span> me
+            by clicking the button on my bottom.
         </p>
         <p>
-            Now let's <button class="next-step-button" onclick="guideNextStep(1,2)">begin!</button>
+            Now let's
+            <button class="next-step-button" onclick="guideNextStep(1,2)">begin!</button>
         </p>
     </div>
 
@@ -666,6 +654,16 @@
             <button type="button"> I'll go without a photo</button>
         </form>
     </div>
+    <script type="text/javascript">
+        <c:choose>
+        <c:when test="${currStep > 1}">
+        guideNextStep(1, ${currStep});
+        </c:when>
+        <c:otherwise>
+        guideNextStep(1, 1);
+        </c:otherwise>
+        </c:choose>
+    </script>
 
 </div>
 
