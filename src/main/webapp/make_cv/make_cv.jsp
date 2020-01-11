@@ -46,7 +46,6 @@
 <body id="page-top">
 
 
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <c:choose>
         <c:when test="${star.imagePath != null}">
@@ -615,8 +614,46 @@
     </c:if>
     <%--    other info ends--%>
 
+</div>
+<script type="text/javascript" src='<c:url value="/js/make-cv-guide.js"/>'></script>
+<button id="maximize-button" class="next-step-button" onclick="maximizeContainer()">Maximize Guide</button>
+<div id="guide-container">
+    <button class="static-button button-right-corner" onclick="minimizeContainer()">Minimize Guide</button>
+    <div class="guide-div" id="guide-1">
+        <h2 class="guide-h2">
+            Welcome!
+        </h2>
+        <p>
+            I am your guide box.</p>
+        <p>
+            You will create your responsive CV by following my step-by-step instructions, and you
+            can see changes to your CV happening right beneath me.</p>
+        <p>
+            If you want a better preview, <span onclick="minimizeContainer()" class="guide-highlight">minimize</span> me by clicking the button on my bottom.
+        </p>
+        <p>
+            Now let's <button class="next-step-button" onclick="guideNextStep(1)">begin!</button>
+        </p>
+    </div>
+
+
+    <div class="guide-div non-display" id="guide-2">
+        <p>
+            here
+        </p>
+        <form id="upload-photo" action='<c:url value="/upload_photo"/>' method="post"
+              enctype='multipart/form-data'>
+            <label>Upload your profile photo here:</label><br>
+            <input type="file" id="profile-photo-upload" name="profile-photo" accept="image/png, image/jpeg">
+            <hr>
+            <button type="submit"> Submit</button>
+            <button type="button"> I'll go without a photo</button>
+        </form>
+    </div>
+
 
 </div>
+
 
 <!-- Bootstrap core JavaScript -->
 <script src='<c:url value="/node_modules/startbootstrap-resume/vendor/jquery/jquery.min.js"/>'></script>
@@ -631,20 +668,6 @@
 <!-- Custom scripts for this template -->
 <script src='<c:url value="/node_modules/startbootstrap-resume/js/resume.min.js"/>'></script>
 
-<div id="upload-form-guide" class="make-cv-guide">
-    <p>
-        here
-    </p>
-    <form id="upload-photo" action='<c:url value="/upload_photo"/>' method="post"
-          enctype='multipart/form-data'>
-        <label>Upload your profile photo here:</label><br>
-        <input type="file" id="profile-photo-upload" name="profile-photo" accept="image/png, image/jpeg">
-        <hr>
-        <button type="submit"> Submit</button>
-        <button type="button"> I'll go without a photo </button>
-    </form>
-
-</div>
 
 </body>
 

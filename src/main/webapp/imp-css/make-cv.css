@@ -1,4 +1,7 @@
 
+button:focus{
+    outline-color: var(--customized-theme-color);
+}
 .theme-bg {
     background-color: var(--customized-theme-color);
     color: white;
@@ -165,6 +168,9 @@
 }
 .static-button{
     color: var(--customized-theme-color);
+    background-color: white;
+    border: var(--customized-theme-color), 2px, solid;
+    font-size: 140%;
     font-family: 'Saira Extra Condensed',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
 }
 
@@ -180,6 +186,9 @@
 }
 
 .non-display{
+    display: none !important;
+}
+.weak-non-display {
     display: none;
 }
 
