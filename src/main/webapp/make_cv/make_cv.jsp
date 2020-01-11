@@ -620,9 +620,7 @@
 <div id="guide-container">
     <button class="static-button button-right-corner" onclick="minimizeContainer()">Minimize Guide</button>
 
-
     <div class="guide-div non-display" id="guide-1">
-
         <h2 class="guide-h2">
             Welcome!
         </h2>
@@ -642,9 +640,6 @@
     </div>
 
     <div class="guide-div non-display" id="guide-2">
-        <p>
-            here
-        </p>
         <form id="upload-photo" action='<c:url value="/upload_photo"/>' method="post"
               enctype='multipart/form-data'>
             <label>Upload your profile photo here:</label><br>
@@ -654,6 +649,7 @@
             <button type="button"> I'll go without a photo</button>
         </form>
     </div>
+
     <script type="text/javascript">
         <c:choose>
         <c:when test="${currStep > 1}">
