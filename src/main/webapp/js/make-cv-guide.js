@@ -12,9 +12,9 @@ function maximizeContainer() {
     const maximizeButton = document.querySelector("#maximize-button");
     maximizeButton.style.display = "none";
 }
-function guideNextStep(index) {
-    const currDiv = document.querySelector(`#guide-${index}`);
-    const nextDiv = document.querySelector(`#guide-${index+1}`);
+function guideNextStep(oldIndex, nextIndex) {
+    const currDiv = document.querySelector(`#guide-${oldIndex}`);
+    const nextDiv = document.querySelector(`#guide-${nextIndex}`);
     currDiv.classList.add("non-display");
     nextDiv.classList.remove("non-display");
 

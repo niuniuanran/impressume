@@ -23,9 +23,9 @@ public class MakeCV extends HttpServlet {
 
         star.setDesignPreference(new DesignPreference(req.getParameter("themeColor")));
 
-
         HttpSession session = req.getSession();
         session.setAttribute("star", star);
+        session.setAttribute("currStep", req.getParameter("currStep"));
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/make_cv/make_cv.jsp");
         dispatcher.forward(req, resp);

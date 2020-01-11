@@ -619,7 +619,24 @@
 <button id="maximize-button" class="next-step-button" onclick="maximizeContainer()">Maximize Guide</button>
 <div id="guide-container">
     <button class="static-button button-right-corner" onclick="minimizeContainer()">Minimize Guide</button>
-    <div class="guide-div" id="guide-1">
+
+    <c:choose>
+        <c:when test="${currStep > 1}">
+        <script type="text/javascript">
+            window.addEventListener("load", function () {
+                guideNextStep(1, ${currStep});
+            })
+        </script>
+        </c:when>
+        <c:otherwise>
+            window.addEventListener("load", function () {
+            guideNextStep(1, 1);
+            })
+        </c:otherwise>
+    </c:choose>
+
+    <div class="guide-div non-display" id="guide-1">
+
         <h2 class="guide-h2">
             Welcome!
         </h2>
@@ -632,10 +649,9 @@
             If you want a better preview, <span onclick="minimizeContainer()" class="guide-highlight">minimize</span> me by clicking the button on my bottom.
         </p>
         <p>
-            Now let's <button class="next-step-button" onclick="guideNextStep(1)">begin!</button>
+            Now let's <button class="next-step-button" onclick="guideNextStep(1,2)">begin!</button>
         </p>
     </div>
-
 
     <div class="guide-div non-display" id="guide-2">
         <p>
@@ -650,7 +666,6 @@
             <button type="button"> I'll go without a photo</button>
         </form>
     </div>
-
 
 </div>
 
