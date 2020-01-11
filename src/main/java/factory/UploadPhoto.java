@@ -41,6 +41,7 @@ public class UploadPhoto extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ResumeStar star = (ResumeStar) req.getSession().getAttribute("star");
+        req.getSession().setAttribute("currStep", 3);
         String targetFileName = star.getFirstName() + "_" + star.getLastName() + star.getId() + "";
 
         DiskFileItemFactory factory = new DiskFileItemFactory();

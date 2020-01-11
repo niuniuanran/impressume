@@ -649,6 +649,9 @@
             <button type="button"> I'll go without a photo</button>
         </form>
     </div>
+    <div class="guide-div non-display" id="guide-3">
+        <p>step 3</p>
+    </div>
 
     <script type="text/javascript">
         <c:choose>
