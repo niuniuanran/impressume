@@ -20,7 +20,5 @@
     "url": "https://github.com/niuniuanran/impressume/issues"
   },
   "homepage": "https://github.com/niuniuanran/impressume#readme",
-  "dependencies": {
-    "startbootstrap-resume": "^5.0.8"
-  }
+  "dependencies": {}
 }

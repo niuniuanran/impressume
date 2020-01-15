@@ -16,11 +16,11 @@
 
     <title>imp: ${star.firstName}'s CV on the way!</title>
     <!-- Bootstrap core CSS -->
-    <link href='<c:url value="/node_modules/startbootstrap-resume/vendor/bootstrap/css/bootstrap.min.css"/>'
+    <link href='<c:url value="https://unpkg.com/startbootstrap-resume/vendor/bootstrap/css/bootstrap.min.css"/>'
           rel="stylesheet">
-    <link href='<c:url value="/node_modules/startbootstrap-resume/css/resume.min.css"/>' rel="stylesheet">
+    <link href='<c:url value="https://unpkg.com/startbootstrap-resume/css/resume.min.css"/>' rel="stylesheet">
     <%--    font awesome--%>
-    <link href='<c:url value="/node_modules/startbootstrap-resume/vendor/fontawesome-free/css/all.min.css"/>'
+    <link href='<c:url value="https://unpkg.com/startbootstrap-resume/vendor/fontawesome-free/css/all.min.css"/>'
           rel="stylesheet">
 
     <!-- Custom fonts for this template -->
@@ -668,17 +668,17 @@
 
 
 <!-- Bootstrap core JavaScript -->
-<script src='<c:url value="/node_modules/startbootstrap-resume/vendor/jquery/jquery.min.js"/>'></script>
+<script src='<c:url value="https://unpkg.com/startbootstrap-resume/vendor/jquery/jquery.min.js"/>'></script>
 
 
 <!-- Plugin JavaScript -->
-<script src='<c:url value="/node_modules/startbootstrap-resume/vendor/bootstrap/js/bootstrap.bundle.min.js"/>'></script>
+<script src='<c:url value="https://unpkg.com/startbootstrap-resume/vendor/bootstrap/js/bootstrap.bundle.min.js"/>'></script>
 
 
-<script src='<c:url value="/node_modules/startbootstrap-resume/vendor/jquery-easing/jquery.easing.min.js"/>'></script>
+<script src='<c:url value="https://unpkg.com/startbootstrap-resume/vendor/jquery-easing/jquery.easing.min.js"/>'></script>
 
 <!-- Custom scripts for this template -->
-<script src='<c:url value="/node_modules/startbootstrap-resume/js/resume.min.js"/>'></script>
+<script src='<c:url value="https://unpkg.com/startbootstrap-resume/js/resume.min.js"/>'></script>
 
 
 </body>
