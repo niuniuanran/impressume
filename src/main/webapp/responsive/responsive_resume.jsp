@@ -302,7 +302,7 @@
 
                         <c:if test="${star.skillStack.html5}">
                             <li class="list-inline-item">
-                                <i class="fab fa-html5"></i>
+                                <i class="fab fa-html5" title="html5"></i>
                             </li>
                         </c:if>
                         <c:if test="${star.skillStack.css3}">
