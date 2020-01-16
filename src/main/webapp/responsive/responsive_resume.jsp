@@ -290,13 +290,13 @@
 
                         <c:if test="${star.skillStack.java}">
                             <li class="list-inline-item">
-                                <i class="fab fa-java"></i>
+                                <i class="fab fa-java" title="java"></i>
                             </li>
 
                         </c:if>
                         <c:if test="${star.skillStack.python}">
                             <li class="list-inline-item">
-                                <i class="fab fa-python"></i>
+                                <i class="fab fa-python" title="python"></i>
                             </li>
                         </c:if>
 
@@ -308,109 +308,109 @@
                         <c:if test="${star.skillStack.css3}">
 
                             <li class="list-inline-item">
-                                <i class="fab fa-css3-alt"></i>
+                                <i class="fab fa-css3-alt" title="css3"></i>
                             </li>
 
                         </c:if>
                         <c:if test="${star.skillStack.js}">
 
                             <li class="list-inline-item">
-                                <i class="fab fa-js-square"></i>
+                                <i class="fab fa-js-square" title="javascript"></i>
                             </li>
                         </c:if>
                         <c:if test="${star.skillStack.nodeJS}">
                             <li class="list-inline-item">
-                                <i class="fab fa-node-js"></i>
+                                <i class="fab fa-node-js" type="node.js"></i>
                             </li>
                         </c:if>
                         <c:if test="${star.skillStack.angular}">
 
                             <li class="list-inline-item">
-                                <i class="fab fa-angular"></i>
+                                <i class="fab fa-angular" title="angular"></i>
                             </li>
                         </c:if>
                         <c:if test="${star.skillStack.react}">
 
                             <li class="list-inline-item">
-                                <i class="fab fa-react"></i>
+                                <i class="fab fa-react" title="react"></i>
                             </li>
                         </c:if>
                         <c:if test="${star.skillStack.vue}">
 
                             <li class="list-inline-item">
-                                <i class="fab fa-vuejs"></i>
+                                <i class="fab fa-vuejs" title="vue.js"></i>
                             </li>
                         </c:if>
 
                         <c:if test="${star.skillStack.php}">
                             <li class="list-inline-item">
-                                <i class="fab fa-php"></i>
+                                <i class="fab fa-php" title="php"></i>
                             </li>
                         </c:if>
 
                         <c:if test="${star.skillStack.sass}">
                             <li class="list-inline-item">
-                                <i class="fab fa-sass"></i>
+                                <i class="fab fa-sass" title="sass"></i>
                             </li>
                         </c:if>
                         <c:if test="${star.skillStack.less}">
                             <li class="list-inline-item">
-                                <i class="fab fa-less"></i>
+                                <i class="fab fa-less" title="less"></i>
                             </li>
                         </c:if>
                         <c:if test="${star.skillStack.wordpress}">
 
                             <li class="list-inline-item">
-                                <i class="fab fa-wordpress"></i>
+                                <i class="fab fa-wordpress" title="wordpress"></i>
                             </li>
                         </c:if>
                         <c:if test="${star.skillStack.gulp}">
 
                             <li class="list-inline-item">
-                                <i class="fab fa-gulp"></i>
+                                <i class="fab fa-gulp" title="gulp"></i>
                             </li>
                         </c:if>
                         <c:if test="${star.skillStack.grunt}">
 
                             <li class="list-inline-item">
-                                <i class="fab fa-grunt"></i>
+                                <i class="fab fa-grunt" title="grunt"></i>
                             </li>
                         </c:if>
                         <c:if test="${star.skillStack.npm}">
 
                             <li class="list-inline-item">
-                                <i class="fab fa-npm"></i>
+                                <i class="fab fa-npm" title="npm"></i>
                             </li>
                         </c:if>
                         <c:if test="${star.skillStack.yarn}">
                             <li class="list-inline-item">
-                                <i class="fab fa-yarn"></i>
+                                <i class="fab fa-yarn" title="yarn"></i>
                             </li>
                         </c:if>
 
                         <c:if test="${star.skillStack.swift}">
                             <li class="list-inline-item">
-                                <i class="fab fa-swift"></i>
+                                <i class="fab fa-swift" title="swift"></i>
                             </li>
                         </c:if>
                         <c:if test="${star.skillStack.adobe}">
                             <li class="list-inline-item">
-                                <i class="fab fa-adobe"></i>
+                                <i class="fab fa-adobe" title="adobe"></i>
                             </li>
                         </c:if>
                         <c:if test="${star.skillStack.aws}">
                             <li class="list-inline-item">
-                                <i class="fab fa-aws"></i>
+                                <i class="fab fa-aws" title="aws"></i>
                             </li>
                         </c:if>
                         <c:if test="${star.skillStack.suse}">
                             <li class="list-inline-item">
-                                <i class="fab fa-suse"></i>
+                                <i class="fab fa-suse" title="suse"></i>
                             </li>
                         </c:if>
                         <c:if test="${star.skillStack.ubuntu}">
                             <li class="list-inline-item">
-                                <i class="fab fa-ubutu"></i>
+                                <i class="fab fa-ubutu" title="ubuntu"></i>
                             </li>
                         </c:if>
                     </ul>
